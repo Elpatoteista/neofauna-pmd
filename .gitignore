@@ -1,0 +1,15 @@
+# Datos pesados: NO se versionan (ver README, sección "Datos")
+datos/*
+!datos/.gitkeep
+*.csv
+*.zip
+*.gdb/
+*.shp
+*.dbf
+*.shx
+# CSV intermedios para Neo4j (se regeneran con cargar_neo4j.sh)
+resultados/neo4j_import/
+# Sí se versionan las salidas chicas de texto y los mapas PNG
+!resultados/*.txt
+__pycache__/
+.venv/

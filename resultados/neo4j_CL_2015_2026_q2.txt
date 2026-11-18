@@ -1,0 +1,76 @@
+introducida, invasora, celdas_urbanas, obs_urbanas, nativas_coocurrentes
+"Harmonia axyridis", FALSE, 160, 874, 3922
+"Bombus terrestris", TRUE, 153, 968, 4053
+"Passer domesticus", FALSE, 147, 511, 3889
+"Eschscholzia californica", TRUE, 123, 629, 3504
+"Cornu aspersum", TRUE, 121, 363, 3858
+"Molothrus bonariensis", TRUE, 114, 740, 3807
+"Columba livia", FALSE, 111, 795, 3739
+"Callipepla californica", FALSE, 102, 402, 3590
+"Verbascum virgatum", FALSE, 96, 214, 3521
+"Nicotiana glauca", TRUE, 91, 341, 2951
+"Cichorium intybus", TRUE, 87, 208, 3326
+"Acacia dealbata", TRUE, 83, 248, 3338
+"Trifolium repens", FALSE, 78, 171, 3415
+"Myiopsitta monachus", TRUE, 77, 675, 2813
+"Linepithema humile", FALSE, 77, 190, 3360
+"Conium maculatum", FALSE, 75, 185, 3398
+"Acacia melanoxylon", FALSE, 71, 185, 3432
+"Papaver somniferum", FALSE, 71, 179, 2850
+"Vespula germanica", TRUE, 71, 159, 3388
+"Silybum marianum", FALSE, 70, 145, 3315
+"Oxalis pes-caprae", TRUE, 68, 181, 3093
+"Convolvulus arvensis", FALSE, 68, 124, 3100
+"Plantago lanceolata", TRUE, 67, 112, 3073
+"Felis catus", TRUE, 66, 126, 3410
+"Galega officinalis", FALSE, 64, 173, 3206
+introducida, clase_i, nativa, clase_n, celdas_compartidas, zonas_urbanas
+"Harmonia axyridis", "Insecta", "Vanessa carye", "Insecta", 119, 30
+"Bombus terrestris", "Insecta", "Vanessa carye", "Insecta", 117, 30
+"Harmonia axyridis", "Insecta", "Apis mellifera", "Insecta", 116, 29
+"Bombus terrestris", "Insecta", "Zonotrichia capensis", "Aves", 114, 29
+"Harmonia axyridis", "Insecta", "Vanellus chilensis", "Aves", 114, 30
+"Bombus terrestris", "Insecta", "Turdus falcklandii", "Aves", 113, 26
+"Bombus terrestris", "Insecta", "Vanellus chilensis", "Aves", 112, 28
+"Harmonia axyridis", "Insecta", "Turdus falcklandii", "Aves", 111, 28
+"Harmonia axyridis", "Insecta", "Zonotrichia capensis", "Aves", 111, 28
+"Harmonia axyridis", "Insecta", "Zenaida auriculata", "Aves", 110, 27
+"Passer domesticus", "Aves", "Vanessa carye", "Insecta", 109, 32
+"Passer domesticus", "Aves", "Vanellus chilensis", "Aves", 109, 28
+"Harmonia axyridis", "Insecta", "Liolaemus tenuis", "Reptilia", 108, 29
+"Passer domesticus", "Aves", "Zenaida auriculata", "Aves", 105, 32
+"Bombus terrestris", "Insecta", "Zenaida auriculata", "Aves", 104, 24
+"Bombus terrestris", "Insecta", "Mimus thenca", "Aves", 103, 27
+"Bombus terrestris", "Insecta", "Leistes loyca", "Aves", 103, 24
+"Harmonia axyridis", "Insecta", "Mimus thenca", "Aves", 102, 27
+"Bombus terrestris", "Insecta", "Sephanoides sephaniodes", "Aves", 101, 29
+"Molothrus bonariensis", "Aves", "Vanessa carye", "Insecta", 100, 21
+"Harmonia axyridis", "Insecta", "Sephanoides sephaniodes", "Aves", 100, 27
+"Harmonia axyridis", "Insecta", "Leistes loyca", "Aves", 100, 24
+"Passer domesticus", "Aves", "Apis mellifera", "Insecta", 98, 31
+"Cornu aspersum", "Gastropoda", "Vanessa carye", "Insecta", 97, 29
+"Bombus terrestris", "Insecta", "Eriopis chilensis", "Insecta", 97, 26
+nativa, iucn, invasoras_con_las_que_coocurre, celdas_compartidas, invasoras
+"Apis mellifera", NULL, 115, 1946, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Turdus falcklandii", "LC", 115, 1935, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Sephanoides sephaniodes", "LC", 114, 1773, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Vanellus chilensis", "LC", 113, 1949, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Zonotrichia capensis", "LC", 112, 1951, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Troglodytes aedon", "LC", 112, 1693, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Geranoaetus polyosoma", "LC", 112, 1346, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Milvago chimango", NULL, 111, 2098, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Zenaida auriculata", "LC", 111, 1852, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Eriopis chilensis", NULL, 111, 1849, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Leistes loyca", "LC", 111, 1796, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Liolaemus tenuis", "LC", 111, 1775, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Oncorhynchus mykiss"]
+"Eristalis tenax", NULL, 111, 1653, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Pyrope pyrope", "LC", 111, 1646, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Curaeus curaeus", "LC", 111, 1605, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Leptasthenura aegithaloides", "LC", 111, 1405, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Vanessa carye", NULL, 110, 1996, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Anairetes parulus", "LC", 110, 1556, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Tachycineta leucopyga", "LC", 110, 1377, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Mimus thenca", "LC", 109, 1815, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+aristas_coocurrencia, celdas_promedio, celdas_max
+491777, 3.2403142074557745, 125
+[2026-11-18 17:56:50]    -> 4 s

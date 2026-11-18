@@ -1,0 +1,76 @@
+introducida, invasora, celdas_urbanas, obs_urbanas, nativas_coocurrentes
+"Harmonia axyridis", FALSE, 101, 348, 2392
+"Bombus terrestris", TRUE, 96, 393, 2519
+"Passer domesticus", FALSE, 76, 203, 2117
+"Eschscholzia californica", TRUE, 74, 254, 2119
+"Molothrus bonariensis", TRUE, 70, 273, 2180
+"Columba livia", FALSE, 64, 250, 2120
+"Callipepla californica", FALSE, 62, 179, 2128
+"Cornu aspersum", TRUE, 58, 125, 2038
+"Nicotiana glauca", TRUE, 56, 121, 1767
+"Verbascum virgatum", FALSE, 52, 82, 2015
+"Myiopsitta monachus", TRUE, 47, 268, 1413
+"Conium maculatum", FALSE, 45, 66, 2062
+"Cichorium intybus", TRUE, 44, 83, 1727
+"Papaver somniferum", FALSE, 42, 66, 1594
+"Vespula germanica", TRUE, 40, 72, 1998
+"Oryctolagus cuniculus", TRUE, 40, 71, 1822
+"Acacia melanoxylon", FALSE, 40, 78, 2046
+"Acacia dealbata", TRUE, 40, 85, 1782
+"Trifolium repens", FALSE, 39, 70, 1679
+"Tropaeolum majus", FALSE, 36, 75, 1731
+"Vinca major", FALSE, 36, 53, 1804
+"Silybum marianum", FALSE, 36, 47, 1842
+"Galega officinalis", FALSE, 34, 61, 1798
+"Foeniculum vulgare", FALSE, 34, 52, 1668
+"Felis catus", TRUE, 32, 43, 1727
+introducida, clase_i, nativa, clase_n, celdas_compartidas, zonas_urbanas
+"Bombus terrestris", "Insecta", "Turdus falcklandii", "Aves", 73, 20
+"Harmonia axyridis", "Insecta", "Vanessa carye", "Insecta", 72, 22
+"Harmonia axyridis", "Insecta", "Turdus falcklandii", "Aves", 65, 16
+"Bombus terrestris", "Insecta", "Zonotrichia capensis", "Aves", 64, 15
+"Bombus terrestris", "Insecta", "Vanellus chilensis", "Aves", 62, 19
+"Bombus terrestris", "Insecta", "Vanessa carye", "Insecta", 61, 20
+"Harmonia axyridis", "Insecta", "Liolaemus tenuis", "Reptilia", 61, 16
+"Harmonia axyridis", "Insecta", "Zenaida auriculata", "Aves", 61, 18
+"Molothrus bonariensis", "Aves", "Vanessa carye", "Insecta", 59, 15
+"Harmonia axyridis", "Insecta", "Apis mellifera", "Insecta", 59, 18
+"Harmonia axyridis", "Insecta", "Vanellus chilensis", "Aves", 58, 18
+"Harmonia axyridis", "Insecta", "Zonotrichia capensis", "Aves", 58, 17
+"Molothrus bonariensis", "Aves", "Zenaida auriculata", "Aves", 56, 14
+"Bombus terrestris", "Insecta", "Zenaida auriculata", "Aves", 56, 16
+"Bombus terrestris", "Insecta", "Sephanoides sephaniodes", "Aves", 54, 18
+"Bombus terrestris", "Insecta", "Mimus thenca", "Aves", 53, 16
+"Bombus terrestris", "Insecta", "Pyrope pyrope", "Aves", 52, 20
+"Passer domesticus", "Aves", "Vanessa carye", "Insecta", 51, 18
+"Bombus terrestris", "Insecta", "Leistes loyca", "Aves", 51, 15
+"Passer domesticus", "Aves", "Vanellus chilensis", "Aves", 50, 17
+"Eschscholzia californica", "Magnoliopsida", "Zonotrichia capensis", "Aves", 50, 16
+"Bombus terrestris", "Insecta", "Phytotoma rara", "Aves", 50, 13
+"Eschscholzia californica", "Magnoliopsida", "Vanessa carye", "Insecta", 49, 15
+"Harmonia axyridis", "Insecta", "Eristalis tenax", "Insecta", 49, 17
+"Bombus terrestris", "Insecta", "Troglodytes aedon", "Aves", 49, 15
+nativa, iucn, invasoras_con_las_que_coocurre, celdas_compartidas, invasoras
+"Vanessa carye", NULL, 89, 874, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Zonotrichia capensis", "LC", 88, 865, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Apis mellifera", NULL, 88, 759, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Sephanoides sephaniodes", "LC", 88, 683, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Diuca diuca", "LC", 88, 592, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Milvago chimango", NULL, 87, 937, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Vanellus chilensis", "LC", 87, 794, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Pyrope pyrope", "LC", 87, 648, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Turdus falcklandii", "LC", 86, 875, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Mimus thenca", "LC", 86, 731, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Eriopis chilensis", NULL, 86, 712, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Tristerix corymbosus", NULL, 86, 585, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Troglodytes aedon", "LC", 85, 681, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Phytotoma rara", "LC", 85, 654, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Steatoda nobilis", NULL, 85, 607, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Parabuteo unicinctus", "LC", 85, 605, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Vachellia caven", "LC", 85, 545, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Curaeus curaeus", "LC", 84, 623, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Carassius auratus"]
+"Anairetes parulus", "LC", 84, 574, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Brassica rapa"]
+"Aristotelia chilensis", "LC", 84, 459, ["Xenopus laevis", "Bellis perennis", "Anthemis cotula", "Leucanthemum vulgare", "Carassius auratus"]
+aristas_coocurrencia, celdas_promedio, celdas_max
+200424, 2.2362042469963392, 76
+[2026-11-18 15:44:25]    -> 2 s

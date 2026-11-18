@@ -1,0 +1,66 @@
+[2026-11-18 15:43:11] Exportando obs_chile (CL 2024-2025, celda 5 km) desde PostGIS
+[2026-11-18 15:43:22]    -> 11 s
+AVISO: no hay tabla wdpa; fuera_ap queda vacío (pregunta 1 incompleta)
+== Tamaño del subconjunto exportado ==
+ pais |   anios   | observaciones | especies | observadores | celdas | obs_urbanas | obs_fuera_ap 
+------+-----------+---------------+----------+--------------+--------+-------------+--------------
+ CL   | 2024-2025 |        189732 |     6618 |         6894 |  10854 |       42857 |            0
+(1 row)
+
+[2026-11-18 15:43:22]    -> 11 s
+total 12444
+drwxr-xr-x 1 Patoloco 197121        0 Nov 18 15:39 .
+drwxr-xr-x 1 Patoloco 197121        0 Nov 18 15:41 ..
+-rw-r--r-- 1 Patoloco 197121   351113 Nov 18 15:43 celdas.csv
+-rw-r--r-- 1 Patoloco 197121     4076 Nov 18 15:43 introducidas.csv
+-rw-r--r-- 1 Patoloco 197121   120025 Nov 18 15:43 jerarquia.csv
+-rw-r--r-- 1 Patoloco 197121 11903168 Nov 18 15:43 obs.csv
+-rw-r--r-- 1 Patoloco 197121   345169 Nov 18 15:43 taxones.csv
+[2026-11-18 15:43:23] Vaciando el grafo de la etapa anterior
+[2026-11-18 15:43:40]    -> 17 s
+[2026-11-18 15:43:40]    -> 17 s
+[2026-11-18 15:43:40] Esquema
+[2026-11-18 15:43:43]    -> 3 s
+[2026-11-18 15:43:43]    -> 3 s
+[2026-11-18 15:43:45] Carga (LOAD CSV)
+[2026-11-18 15:43:59]    -> 14 s
+[2026-11-18 15:43:59]    -> 14 s
+[2026-11-18 15:43:59] Derivadas (PRESENTE_EN, REGISTRA, COOCURRE por celda)
+[2026-11-18 15:44:07]    -> 8 s
+[2026-11-18 15:44:07]    -> 8 s
+[2026-11-18 15:44:07] Comunidades de observadores (GDS)
+graphName
+"obs_taxon"
+grafo, nodos, aristas
+"obs_taxon", 9543, 109093
+relationshipsWritten, computeMillis
+30110, 424
+communityCount, modularidad, computeMillis
+18, 0.657, 3077
+comunidades_3_o_mas, mayor, observadores_en_ellas, total_comunidades
+17, 431, 3017, 18
+graphName
+"obs_taxon"
+[2026-11-18 15:44:14]    -> 7 s
+[2026-11-18 15:44:14]    -> 7 s
+[2026-11-18 15:44:14] Tamaño del grafo
+etiqueta, nodos
+"Observacion", 189732
+"Taxon", 11287
+"Celda", 10854
+"Observador", 6894
+"Pais", 1
+tipo, aristas
+"COOCURRE", 200424
+"OBSERVO", 189732
+"DE_TAXON", 189732
+"EN_CELDA", 189732
+"REGISTRA", 116038
+"PRESENTE_EN", 107776
+"HIJO_DE", 10883
+"INTRODUCIDA_EN", 374
+[2026-11-18 15:44:19] Pregunta 1
+[2026-11-18 15:44:22]    -> 2 s
+[2026-11-18 15:44:22] Pregunta 2
+[2026-11-18 15:44:25]    -> 2 s
+[2026-11-18 15:44:25] Listo: resultados/neo4j_CL_2024_2025_q1.txt y _q2.txt

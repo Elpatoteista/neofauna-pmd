@@ -1,0 +1,76 @@
+introducida, invasora, celdas_urbanas, obs_urbanas, nativas_coocurrentes
+"Harmonia axyridis", FALSE, 444, 5081, 7420
+"Apis mellifera", TRUE, 396, 2949, 7580
+"Passer domesticus", TRUE, 347, 3053, 7173
+"Columba livia", TRUE, 275, 3032, 7081
+"Sturnus vulgaris", TRUE, 246, 2827, 4933
+"Cornu aspersum", FALSE, 242, 916, 5465
+"Echium plantagineum", TRUE, 210, 638, 5210
+"Lantana camara", TRUE, 197, 955, 6150
+"Taraxacum officinale", FALSE, 172, 505, 5884
+"Cichorium intybus", TRUE, 168, 360, 5057
+"Sonchus oleraceus", FALSE, 158, 450, 5195
+"Trifolium repens", TRUE, 154, 342, 5288
+"Dipsacus fullonum", TRUE, 153, 555, 4715
+"Veronica persica", TRUE, 152, 320, 5043
+"Ricinus communis", TRUE, 148, 759, 5495
+"Cirsium vulgare", TRUE, 140, 349, 5069
+"Medicago lupulina", TRUE, 137, 309, 5136
+"Melilotus albus", TRUE, 131, 317, 5220
+"Rumina decollata", FALSE, 130, 424, 4201
+"Tarentola mauritanica", FALSE, 130, 969, 4140
+"Gleditsia triacanthos", TRUE, 113, 260, 4425
+"Lepus europaeus", TRUE, 106, 229, 3797
+"Verbascum virgatum", TRUE, 105, 217, 4751
+"Senecio madagascariensis", TRUE, 103, 203, 4795
+"Mirabilis jalapa", TRUE, 101, 190, 4603
+introducida, clase_i, nativa, clase_n, celdas_compartidas, zonas_urbanas
+"Harmonia axyridis", "Insecta", "Dione vanillae", "Insecta", 335, 83
+"Harmonia axyridis", "Insecta", "Furnarius rufus", "Aves", 311, 79
+"Harmonia axyridis", "Insecta", "Pitangus sulphuratus", "Aves", 311, 82
+"Apis mellifera", "Insecta", "Dione vanillae", "Insecta", 305, 79
+"Apis mellifera", "Insecta", "Furnarius rufus", "Aves", 304, 86
+"Apis mellifera", "Insecta", "Pitangus sulphuratus", "Aves", 304, 89
+"Harmonia axyridis", "Insecta", "Mimus saturninus", "Aves", 298, 75
+"Harmonia axyridis", "Insecta", "Vanellus chilensis", "Aves", 297, 81
+"Harmonia axyridis", "Insecta", "Zenaida auriculata", "Aves", 295, 84
+"Harmonia axyridis", "Insecta", "Zonotrichia capensis", "Aves", 286, 77
+"Apis mellifera", "Insecta", "Zenaida auriculata", "Aves", 285, 92
+"Apis mellifera", "Insecta", "Vanellus chilensis", "Aves", 284, 87
+"Harmonia axyridis", "Insecta", "Myiopsitta monachus", "Aves", 283, 72
+"Harmonia axyridis", "Insecta", "Argiope argentata", "Arachnida", 282, 73
+"Harmonia axyridis", "Insecta", "Colaptes melanochloros", "Aves", 275, 81
+"Apis mellifera", "Insecta", "Mimus saturninus", "Aves", 273, 77
+"Harmonia axyridis", "Insecta", "Caracara plancus", "Aves", 267, 68
+"Apis mellifera", "Insecta", "Zonotrichia capensis", "Aves", 267, 84
+"Passer domesticus", "Aves", "Zenaida auriculata", "Aves", 264, 100
+"Apis mellifera", "Insecta", "Myiopsitta monachus", "Aves", 263, 78
+"Harmonia axyridis", "Insecta", "Sicalis flaveola", "Aves", 261, 75
+"Harmonia axyridis", "Insecta", "Turdus rufiventris", "Aves", 258, 64
+"Apis mellifera", "Insecta", "Argiope argentata", "Arachnida", 257, 68
+"Harmonia axyridis", "Insecta", "Troglodytes aedon", "Aves", 254, 77
+"Harmonia axyridis", "Insecta", "Passiflora caerulea", "Magnoliopsida", 252, 64
+nativa, iucn, invasoras_con_las_que_coocurre, celdas_compartidas, invasoras
+"Vanellus chilensis", "LC", 231, 6669, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Zenaida auriculata", "LC", 231, 6654, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Zonotrichia capensis", "LC", 229, 6474, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Milvago chimango", NULL, 229, 6386, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Mimus saturninus", "LC", 228, 6481, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Troglodytes aedon", "LC", 227, 5993, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Vanessa carye", NULL, 226, 5355, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Caracara plancus", "LC", 225, 6204, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Sicalis flaveola", "LC", 225, 5806, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Falco sparverius", "LC", 223, 4796, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Molothrus bonariensis", "LC", 222, 5657, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Eriopis connexa", NULL, 221, 5218, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Columbina picui", "LC", 220, 4920, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Steatoda grossa", NULL, 219, 3733, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Agelaioides badius", "LC", 218, 5322, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Nannopterum brasilianum", "LC", 218, 4813, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Anas flavirostris", "LC", 218, 4585, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Patagioenas picazuro", "LC", 217, 5290, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Chroicocephalus maculipennis", NULL, 217, 3217, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+"Dione vanillae", "LC", 216, 6597, ["Erodium cicutarium", "Setaria verticillata", "Salix fragilis", "Dipsacus fullonum", "Veronica arvensis"]
+aristas_coocurrencia, celdas_promedio, celdas_max
+792015, 4.842909540854526, 335
+[2026-11-18 15:52:50]    -> 4 s

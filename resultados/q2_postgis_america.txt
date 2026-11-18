@@ -1,0 +1,113 @@
+Timing is on.
+DROP TABLE
+Time: 0.379 ms
+psql:/sql/q2_invasoras_urbanas.sql:13: NOTICE:  table "obs_america_urbano" does not exist, skipping
+SELECT 27063351
+Time: 453421.971 ms (07:33.422)
+CREATE INDEX
+Time: 6698.376 ms (00:06.698)
+ANALYZE
+Time: 451.237 ms
+
+== Resumen: observaciones urbanas e introducidas ==
+ obs_urbanas | obs_totales | zonas_urbanas | especies_urbanas | especies_introducidas | especies_invasoras_estrictas | pct_obs_introducidas 
+-------------+-------------+---------------+------------------+-----------------------+------------------------------+----------------------
+    27063351 |    95123361 |          2079 |            84140 |                  4490 |                          741 |                 16.2
+(1 row)
+
+Time: 42841.182 ms (00:42.841)
+
+== Especies introducidas (GRIIS) más observadas en zonas urbanas ==
+          especie          |  reino   |     clase     | pais | invasora_estricta | obs_urbanas | zonas_urbanas 
+---------------------------+----------+---------------+------+-------------------+-------------+---------------
+ Apis mellifera            | Animalia | Insecta       | US   | f                 |      168547 |           831
+ Passer domesticus         | Animalia | Aves          | US   | f                 |      109661 |           815
+ Harmonia axyridis         | Animalia | Insecta       | US   | f                 |      107127 |           813
+ Columba livia             | Animalia | Aves          | US   | f                 |       69740 |           650
+ Sturnus vulgaris          | Animalia | Aves          | US   | f                 |       59069 |           765
+ Anolis sagrei             | Animalia | Reptilia      | US   | f                 |       55914 |           247
+ Lycorma delicatula        | Animalia | Insecta       | US   | f                 |       48105 |           170
+ Trifolium repens          | Plantae  | Magnoliopsida | US   | f                 |       44099 |           741
+ Armadillidium vulgare     | Animalia | Malacostraca  | US   | f                 |       42444 |           659
+ Pieris rapae              | Animalia | Insecta       | US   | f                 |       39885 |           567
+ Alliaria petiolata        | Plantae  | Magnoliopsida | US   | f                 |       39438 |           351
+ Ailanthus altissima       | Plantae  | Magnoliopsida | US   | f                 |       31847 |           468
+ Coccinella septempunctata | Animalia | Insecta       | US   | f                 |       31117 |           577
+ Lonicera maackii          | Plantae  | Magnoliopsida | US   | f                 |       30913 |           326
+ Glechoma hederacea        | Plantae  | Magnoliopsida | US   | f                 |       30132 |           468
+ Artemisia vulgaris        | Plantae  | Magnoliopsida | US   | f                 |       30109 |           251
+ Rosa multiflora           | Plantae  | Magnoliopsida | US   | f                 |       25052 |           395
+ Lamium purpureum          | Plantae  | Magnoliopsida | US   | f                 |       24782 |           459
+ Plantago lanceolata       | Plantae  | Magnoliopsida | US   | f                 |       24175 |           560
+ Lonicera japonica         | Plantae  | Magnoliopsida | US   | f                 |       23307 |           473
+ Verbascum thapsus         | Plantae  | Magnoliopsida | US   | f                 |       22980 |           573
+ Daucus carota             | Plantae  | Magnoliopsida | US   | f                 |       22794 |           508
+ Cornu aspersum            | Animalia | Gastropoda    | US   | f                 |       22580 |           173
+ Cichorium intybus         | Plantae  | Magnoliopsida | US   | f                 |       21825 |           447
+ Halyomorpha halys         | Animalia | Insecta       | US   | f                 |       21414 |           560
+(25 rows)
+
+Time: 5470.743 ms (00:05.471)
+
+== Por país: obs. urbanas, n.º de introducidas y la introducida urbana más observada ==
+   (EE.UU. domina los totales; el GRIIS de EE.UU. v2.0 no informa isInvasive, por eso "estricta" sale falso allí)
+ pais | obs_urbanas | especies_introducidas |     mas_observada     | obs_de_esa 
+------+-------------+-----------------------+-----------------------+------------
+ US   |    21491722 |                  3735 | Apis mellifera        |     168547
+ CA   |     2932335 |                   937 | Harmonia axyridis     |      17723
+ MX   |     1000522 |                   417 | Passer domesticus     |      18001
+ BR   |      493193 |                   518 | Apis mellifera        |       4062
+ AR   |      465983 |                   382 | Harmonia axyridis     |       4529
+ CL   |      126572 |                   335 | Bombus terrestris     |        889
+ CO   |      115219 |                   224 | Apis mellifera        |       1393
+ EC   |       76961 |                     0 |                       |           
+ PE   |       65251 |                   206 | Columba livia         |       1753
+ PR   |       40834 |                     0 |                       |           
+ PA   |       40406 |                    72 | Sicalis flaveola      |        423
+ BO   |       37784 |                   105 | Columba livia         |       1149
+ CR   |       33607 |                   136 | Columba livia         |        283
+ UY   |       31444 |                    59 | Carpobrotus edulis    |        189
+ VE   |       22714 |                    92 | Gonatodes vittatus    |        418
+ TT   |        8735 |                    51 | Anolis aeneus         |        353
+ AW   |        8202 |                    49 | Quiscalus lugubris    |        195
+ GT   |        8170 |                    88 | Columba livia         |         86
+ SV   |        7891 |                    84 | Columba livia         |         62
+ DO   |        7763 |                   103 | Columba livia         |        161
+ CW   |        6325 |                    81 | Calotropis procera    |        109
+ HN   |        5549 |                    72 | Hemidactylus frenatus |         24
+ PY   |        5467 |                    30 | Passer domesticus     |         46
+(23 rows)
+
+Time: 1981.639 ms (00:01.982)
+
+== Zonas urbanas con más especies introducidas ==
+ urbano_id |  lat  |   lon   | km2  | especies_introducidas | especies_totales |   obs   
+-----------+-------+---------+------+-----------------------+------------------+---------
+      3481 | 33.99 | -117.98 | 6602 |                  1279 |             8403 | 1596905
+      2541 | 37.54 | -122.14 | 1924 |                  1202 |             6968 | 1085184
+      4820 | 39.05 |  -76.98 | 3833 |                  1162 |            10325 | 1342705
+      4818 | 40.77 |  -73.47 | 2142 |                  1129 |             8177 |  422971
+      4794 | 40.01 |  -75.19 | 4152 |                  1095 |             8180 |  587470
+      4812 | 42.30 |  -71.20 | 3150 |                  1045 |             8314 |  661366
+      4815 | 40.63 |  -74.25 | 4298 |                   976 |             7495 |  435557
+      3479 | 32.86 | -117.11 | 1989 |                   955 |             6548 |  958987
+      4810 | 41.88 |  -87.89 | 5027 |                   939 |             7961 |  736357
+      3192 | 45.52 | -122.68 | 1175 |                   910 |             4630 |  269478
+      4082 | 26.17 |  -80.24 | 3265 |                   852 |             6527 |  489708
+      4791 | 41.36 |  -81.59 | 1687 |                   815 |             6660 |  250239
+      3917 | 33.85 |  -84.33 | 3302 |                   807 |             6447 |  264074
+      3178 | 47.36 | -122.34 |  762 |                   804 |             3826 |  164354
+      4816 | 41.04 |  -73.68 |  863 |                   803 |             5648 |  190816
+      4806 | 42.47 |  -83.25 | 3155 |                   797 |             6112 |  190164
+      4793 | 40.48 |  -80.00 | 1033 |                   765 |             5383 |  143532
+      4813 | 41.67 |  -72.80 | 2179 |                   739 |             6045 |  139741
+      4304 | 32.84 |  -96.97 | 3648 |                   729 |             7368 | 1154191
+      3841 | 35.88 |  -78.79 |  890 |                   725 |             6397 |  294177
+      4306 | 29.82 |  -95.35 | 3754 |                   703 |             6210 |  516410
+        22 | 40.78 |  -73.97 |   49 |                   691 |             3901 |  190377
+      3155 | 39.77 | -105.02 | 1746 |                   690 |             4588 |  251391
+      4205 | 30.35 |  -97.75 |  702 |                   669 |             6568 |  502966
+      4891 | 44.96 |  -93.26 | 1915 |                   667 |             5845 |  350497
+(25 rows)
+
+Time: 35127.603 ms (00:35.128)

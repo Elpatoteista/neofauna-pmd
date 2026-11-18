@@ -1,0 +1,39 @@
+ Container neofauna-postgis Running 
+ Container neofauna-postgis Waiting 
+ Container neofauna-postgis Healthy 
+[2026-11-18 17:14:03] INICIO carga chile -> obs_chile  (fuente: cat '/datos/0014759-261110092616502.csv')
+Timing is on.
+BEGIN
+Time: 0.239 ms
+DROP TABLE
+Time: 0.558 ms
+psql:/sql/01_obs_tabla.sql:5: NOTICE:  table "obs_chile" does not exist, skipping
+CREATE TABLE
+Time: 15.969 ms
+COPY 537785
+Time: 2664.383 ms (00:02.664)
+COMMIT
+Time: 95.882 ms
+[2026-11-18 17:14:06] COPY terminado en 3 s
+Timing is on.
+SET
+Time: 0.182 ms
+SET
+Time: 0.072 ms
+ALTER TABLE
+Time: 160.422 ms
+CREATE INDEX
+Time: 878.232 ms
+CREATE INDEX
+Time: 297.187 ms
+CREATE INDEX
+Time: 129.794 ms
+VACUUM
+Time: 667.106 ms
+   tabla   | datos  | indices | total  | filas_aprox 
+-----------+--------+---------+--------+-------------
+ obs_chile | 162 MB | 40 MB   | 202 MB |      537785
+(1 row)
+
+Time: 1.384 ms
+[2026-11-18 17:14:09] Índices + VACUUM ANALYZE en 3 s   (total 6 s)

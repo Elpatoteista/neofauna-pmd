@@ -1,0 +1,76 @@
+introducida, invasora, celdas_urbanas, obs_urbanas, nativas_coocurrentes
+"Apis mellifera", TRUE, 578, 7620, 15158
+"Passer domesticus", TRUE, 521, 13060, 14180
+"Columba livia", TRUE, 472, 9642, 14448
+"Streptopelia decaocto", TRUE, 444, 7084, 14178
+"Ricinus communis", TRUE, 434, 3186, 14371
+"Nicotiana glauca", FALSE, 318, 1790, 11228
+"Cornu aspersum", FALSE, 303, 2773, 10858
+"Harmonia axyridis", TRUE, 276, 2250, 10249
+"Myiopsitta monachus", TRUE, 263, 4613, 10717
+"Melinis repens", TRUE, 227, 746, 12303
+"Rumina decollata", TRUE, 198, 694, 8643
+"Schinus molle", FALSE, 195, 1128, 6653
+"Cenchrus setaceus", TRUE, 193, 580, 10375
+"Sonchus oleraceus", FALSE, 173, 416, 10592
+"Leonotis nepetifolia", TRUE, 167, 1408, 6873
+"Hemidactylus frenatus", TRUE, 161, 573, 9804
+"Cenchrus ciliaris", TRUE, 158, 1459, 8740
+"Paratrechina longicornis", FALSE, 145, 381, 11340
+"Hemidactylus turcicus", TRUE, 137, 480, 6573
+"Reseda luteola", FALSE, 136, 553, 6529
+"Thunbergia alata", TRUE, 136, 390, 8725
+"Sturnus vulgaris", TRUE, 135, 1015, 6891
+"Tribulus terrestris", FALSE, 129, 426, 6617
+"Oxalis corniculata", FALSE, 127, 253, 10135
+"Melilotus indicus", FALSE, 124, 390, 8318
+introducida, clase_i, nativa, clase_n, celdas_compartidas, zonas_urbanas
+"Apis mellifera", "Insecta", "Quiscalus mexicanus", "Aves", 452, 84
+"Apis mellifera", "Insecta", "Haemorhous mexicanus", "Aves", 430, 74
+"Apis mellifera", "Insecta", "Columbina inca", "Aves", 407, 73
+"Columba livia", "Aves", "Quiscalus mexicanus", "Aves", 395, 80
+"Passer domesticus", "Aves", "Columbina inca", "Aves", 387, 70
+"Apis mellifera", "Insecta", "Zenaida asiatica", "Aves", 372, 71
+"Streptopelia decaocto", "Aves", "Quiscalus mexicanus", "Aves", 371, 80
+"Apis mellifera", "Insecta", "Pyrocephalus rubinus", "Aves", 359, 66
+"Apis mellifera", "Insecta", "Spinus psaltria", "Aves", 349, 67
+"Apis mellifera", "Insecta", "Neoscona oaxacensis", "Arachnida", 348, 62
+"Columba livia", "Aves", "Haemorhous mexicanus", "Aves", 347, 70
+"Ricinus communis", "Magnoliopsida", "Quiscalus mexicanus", "Aves", 343, 71
+"Apis mellifera", "Insecta", "Ascalapha odorata", "Insecta", 339, 66
+"Passer domesticus", "Aves", "Zenaida asiatica", "Aves", 336, 64
+"Streptopelia decaocto", "Aves", "Haemorhous mexicanus", "Aves", 336, 69
+"Ricinus communis", "Magnoliopsida", "Haemorhous mexicanus", "Aves", 333, 64
+"Apis mellifera", "Insecta", "Cathartes aura", "Aves", 332, 72
+"Passer domesticus", "Aves", "Neoscona oaxacensis", "Arachnida", 325, 60
+"Ricinus communis", "Magnoliopsida", "Columbina inca", "Aves", 322, 62
+"Apis mellifera", "Insecta", "Setophaga coronata", "Aves", 321, 61
+"Apis mellifera", "Insecta", "Danaus plexippus", "Insecta", 319, 60
+"Apis mellifera", "Insecta", "Cynanthus latirostris", "Aves", 310, 47
+"Passer domesticus", "Aves", "Cathartes aura", "Aves", 305, 63
+"Apis mellifera", "Insecta", "Hirundo rustica", "Aves", 303, 58
+"Ricinus communis", "Magnoliopsida", "Pyrocephalus rubinus", "Aves", 302, 57
+nativa, iucn, invasoras_con_las_que_coocurre, celdas_compartidas, invasoras
+"Setophaga coronata", "LC", 142, 4484, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Quiscalus mexicanus", "LC", 141, 5610, ["Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia", "Myriophyllum aquaticum"]
+"Ardea alba", "LC", 140, 3855, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Egretta thula", "LC", 140, 3359, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Nycticorax nycticorax", "LC", 139, 2636, ["Undaria pinnatifida", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia", "Myriophyllum aquaticum"]
+"Haemorhous mexicanus", "LC", 138, 5425, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Cathartes aura", "LC", 138, 4399, ["Undaria pinnatifida", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia", "Myriophyllum aquaticum"]
+"Spinus psaltria", "LC", 137, 4730, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Astur cooperii", NULL, 137, 3924, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Charadrius vociferus", "NT", 137, 2943, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Ascalapha odorata", NULL, 136, 4550, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Cardellina pusilla", "LC", 136, 3868, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Dione vanillae", "LC", 136, 3851, ["Undaria pinnatifida", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia", "Myriophyllum aquaticum"]
+"Danaus gilippus", "LC", 136, 3407, ["Undaria pinnatifida", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia", "Myriophyllum aquaticum"]
+"Pyrocephalus rubinus", "LC", 135, 4695, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Cotinis mutabilis", NULL, 135, 3913, ["Undaria pinnatifida", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia", "Myriophyllum aquaticum"]
+"Buteo jamaicensis", "LC", 135, 3775, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+"Portulaca oleracea", "LC", 135, 3307, ["Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia", "Myriophyllum aquaticum"]
+"Ardea herodias", "LC", 135, 2324, ["Undaria pinnatifida", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia", "Myriophyllum aquaticum"]
+"Icterus cucullatus", "LC", 134, 3357, ["Undaria pinnatifida", "Sus scrofa", "Aedes aegypti", "Soliva sessilis", "Emilia sonchifolia"]
+aristas_coocurrencia, celdas_promedio, celdas_max
+1206802, 3.918597251247399, 452
+[2026-11-18 16:02:18]    -> 5 s

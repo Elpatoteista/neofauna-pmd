@@ -1,0 +1,81 @@
+Timing is on.
+DROP TABLE
+Time: 1.828 ms
+psql:/sql/q2_invasoras_urbanas.sql:13: NOTICE:  table "obs_chile_urbano" does not exist, skipping
+SELECT 123123
+Time: 3194.348 ms (00:03.194)
+CREATE INDEX
+Time: 43.726 ms
+ANALYZE
+Time: 63.184 ms
+
+== Resumen: observaciones urbanas e introducidas ==
+ obs_urbanas | obs_totales | zonas_urbanas | especies_urbanas | especies_introducidas | especies_invasoras_estrictas | pct_obs_introducidas 
+-------------+-------------+---------------+------------------+-----------------------+------------------------------+----------------------
+      123123 |      525767 |            64 |             4355 |                   334 |                          111 |                 11.1
+(1 row)
+
+Time: 128.994 ms
+
+== Especies introducidas (GRIIS) más observadas en zonas urbanas ==
+         especie          |  reino   |     clase     | pais | invasora_estricta | obs_urbanas | zonas_urbanas 
+--------------------------+----------+---------------+------+-------------------+-------------+---------------
+ Bombus terrestris        | Animalia | Insecta       | CL   | t                 |         881 |            37
+ Harmonia axyridis        | Animalia | Insecta       | CL   | f                 |         778 |            34
+ Columba livia            | Animalia | Aves          | CL   | f                 |         749 |            34
+ Molothrus bonariensis    | Animalia | Aves          | CL   | t                 |         695 |            21
+ Myiopsitta monachus      | Animalia | Aves          | CL   | t                 |         670 |            16
+ Eschscholzia californica | Plantae  | Magnoliopsida | CL   | t                 |         564 |            30
+ Passer domesticus        | Animalia | Aves          | CL   | f                 |         447 |            41
+ Callipepla californica   | Animalia | Aves          | CL   | f                 |         343 |            22
+ Cornu aspersum           | Animalia | Gastropoda    | CL   | t                 |         321 |            31
+ Nicotiana glauca         | Plantae  | Magnoliopsida | CL   | t                 |         298 |            18
+ Acacia dealbata          | Plantae  | Magnoliopsida | CL   | t                 |         212 |            20
+ Cichorium intybus        | Plantae  | Magnoliopsida | CL   | t                 |         185 |            26
+ Linepithema humile       | Animalia | Insecta       | CL   | f                 |         176 |            17
+ Tropaeolum majus         | Plantae  | Magnoliopsida | CL   | f                 |         167 |            14
+ Verbascum virgatum       | Plantae  | Magnoliopsida | CL   | f                 |         167 |            20
+ Oxalis pes-caprae        | Plantae  | Magnoliopsida | CL   | t                 |         158 |            18
+ Trifolium repens         | Plantae  | Magnoliopsida | CL   | f                 |         152 |            21
+ Conium maculatum         | Plantae  | Magnoliopsida | CL   | f                 |         150 |            20
+ Ricinus communis         | Plantae  | Magnoliopsida | CL   | t                 |         147 |            17
+ Vespula germanica        | Animalia | Insecta       | CL   | t                 |         139 |            17
+(20 rows)
+
+Time: 151.146 ms
+
+== Por país: obs. urbanas, n.º de introducidas y la introducida urbana más observada ==
+   (EE.UU. domina los totales; el GRIIS de EE.UU. v2.0 no informa isInvasive, por eso "estricta" sale falso allí)
+ pais | obs_urbanas | especies_introducidas |   mas_observada   | obs_de_esa 
+------+-------------+-----------------------+-------------------+------------
+ CL   |      123123 |                   334 | Bombus terrestris |        881
+(1 row)
+
+Time: 29.111 ms
+
+== Zonas urbanas con más especies introducidas ==
+ urbano_id |  lat   |  lon   | km2  | especies_introducidas | especies_totales |  obs  
+-----------+--------+--------+------+-----------------------+------------------+-------
+      5538 | -33.48 | -70.67 | 1248 |                   219 |             1980 | 42002
+      5516 | -33.57 | -71.60 |  138 |                   152 |             1096 |  7742
+      5543 | -36.78 | -73.08 |  183 |                   145 |             1200 |  9945
+      5512 | -32.99 | -71.54 |  182 |                   138 |             1326 | 12909
+      5501 | -29.92 | -71.25 |  252 |                   116 |             1147 | 16476
+      5515 | -33.39 | -71.65 |   84 |                   110 |             1006 |  6588
+      5528 | -35.42 | -71.64 |   92 |                    86 |              423 |  1492
+      5370 | -38.73 | -72.59 |   95 |                    86 |              681 |  3105
+      5517 | -33.68 | -71.21 |   34 |                    84 |              212 |   351
+      5383 | -39.83 | -73.22 |   27 |                    70 |              519 |  2404
+      5520 | -34.15 | -70.71 |  157 |                    70 |              296 |  1022
+      5544 | -36.73 | -72.98 |   14 |                    64 |              370 |  1057
+      5513 | -33.04 | -71.39 |   51 |                    58 |              522 |  1883
+      5525 | -34.97 | -71.21 |   84 |                    58 |              348 |   757
+      5386 | -40.57 | -73.13 |   32 |                    56 |              410 |  1793
+      5390 | -41.47 | -72.95 |   34 |                    50 |              276 |  1099
+      5542 | -36.60 | -72.09 |   49 |                    46 |              206 |   475
+      5533 | -33.00 | -71.27 |   15 |                    43 |              347 |   913
+      5545 | -37.00 | -73.15 |   39 |                    32 |              181 |   282
+      5523 | -34.58 | -70.97 |   40 |                    30 |              117 |   145
+(20 rows)
+
+Time: 135.770 ms

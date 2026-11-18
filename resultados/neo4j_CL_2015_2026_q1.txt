@@ -1,0 +1,69 @@
+especie, iucn, clase, familia, obs, obs_fuera_ap, pct_fuera
+"Bombus dahlbomii", "EN", "Insecta", "Apidae", 1045, 721, 69.0
+"Vultur gryphus", "VU", "Aves", "Cathartidae", 1319, 614, 46.6
+"Citronella mucronata", "VU", "Magnoliopsida", "Cardiopteridaceae", 739, 595, 80.5
+"Jubaea chilensis", "EN", "Liliopsida", "Arecaceae", 2164, 571, 26.4
+"Lontra felina", "EN", "Mammalia", "Mustelidae", 460, 392, 85.2
+"Spheniscus humboldti", "VU", "Aves", "Spheniscidae", 566, 356, 62.9
+"Tringa flavipes", "VU", "Aves", "Scolopacidae", 315, 310, 98.4
+"Ardenna creatopus", "VU", "Aves", "Procellariidae", 337, 308, 91.4
+"Phoenicoparrus andinus", "VU", "Aves", "Phoenicopteridae", 412, 265, 64.3
+"Procellaria aequinoctialis", "VU", "Aves", "Procellariidae", 283, 256, 90.5
+"Limosa haemastica", "VU", "Aves", "Scolopacidae", 254, 251, 98.8
+"Myrcianthes coquimbensis", "EN", "Magnoliopsida", "Myrtaceae", 319, 246, 77.1
+"Rhinella atacamensis", "VU", "Amphibia", "Bufonidae", 276, 243, 88.0
+"Copiapoa echinoides", "VU", "Magnoliopsida", "Cactaceae", 286, 242, 84.6
+"Thalassarche salvini", "VU", "Aves", "Diomedeidae", 239, 229, 95.8
+"Calyptocephalella gayi", "VU", "Amphibia", "Calyptocephalellidae", 241, 219, 90.9
+"Podocarpus salignus", "VU", "Pinopsida", "Podocarpaceae", 290, 211, 72.8
+"Eriosyce chilensis", "CR", "Magnoliopsida", "Cactaceae", 204, 204, 100.0
+"Pilgerodendron uviferum", "VU", "Pinopsida", "Cupressaceae", 323, 203, 62.8
+"Copiapoa gigantea", "VU", "Magnoliopsida", "Cactaceae", 197, 197, 100.0
+"Pterodroma defilippiana", "VU", "Aves", "Procellariidae", 179, 162, 90.5
+"Pitavia punctata", "EN", "Magnoliopsida", "Rutaceae", 162, 159, 98.1
+"Diomedea sanfordi", "EN", "Aves", "Diomedeidae", 164, 159, 97.0
+"Butyriboletus loyo", "EN", "Agaricomycetes", "Boletaceae", 167, 156, 93.4
+"Genista monspessulana", "EN", "Magnoliopsida", "Fabaceae", 207, 152, 73.4
+"Copiapoa fiedleriana", "VU", "Magnoliopsida", "Cactaceae", 181, 151, 83.4
+"Copiapoa humilis", "EN", "Magnoliopsida", "Cactaceae", 151, 140, 92.7
+"Rhinella spinulosa", "EN", "Amphibia", "Bufonidae", 221, 119, 53.8
+"Hippocamelus bisulcus", "EN", "Mammalia", "Cervidae", 259, 111, 42.9
+"Balaenoptera physalus", "VU", "Mammalia", "Balaenopteridae", 171, 110, 64.3
+orden, familia, especies_amenazadas, ejemplos
+"Caryophyllales", "Cactaceae", 33, ["Eriosyce confinis (VU)", "Eriosyce napina (VU)", "Eriosyce odieri (VU)", "Eriosyce rodentiophila (VU)", "Eriosyce taltalensis (VU)", "Copiapoa echinoides (VU)"]
+"Squamata", "Liolaemidae", 20, ["Liolaemus carlosgarini (VU)", "Liolaemus frassinettii (VU)", "Liolaemus hellmichi (VU)", "Liolaemus thermarum (VU)", "Phymaturus vociferator (VU)", "Liolaemus villaricensis (VU)"]
+"Anura", "Alsodidae", 16, ["Alsodes hugoi (VU)", "Alsodes montanus (VU)", "Alsodes tumultuosus (VU)", "Eupsophus altor (EN)", "Eupsophus contulmoensis (EN)", "Eupsophus migueli (EN)"]
+"Procellariiformes", "Diomedeidae", 8, ["Diomedea epomophora (VU)", "Diomedea exulans (VU)", "Thalassarche eremita (VU)", "Thalassarche salvini (VU)", "Diomedea antipodensis (EN)", "Diomedea sanfordi (EN)"]
+"Procellariiformes", "Procellariidae", 8, ["Procellaria aequinoctialis (VU)", "Pterodroma defilippiana (VU)", "Pterodroma externa (VU)", "Pterodroma longirostris (VU)", "Ardenna bulleri (VU)", "Ardenna creatopus (VU)"]
+"Anura", "Telmatobiidae", 4, ["Telmatobius pefauri (EN)", "Telmatobius chusmisensis (EN)", "Telmatobius philippii (CR)", "Telmatobius fronteriensis (CR)"]
+"Asterales", "Asteraceae", 4, ["Parastrephia teretiuscula (VU)", "Rockhausenia glaberrima (VU)", "Diplostephium cinereum (EN)", "Pseudognaphalium cheiranthifolium (EN)"]
+"Squamata", "Leiosauridae", 4, ["Pristidactylus torquatus (VU)", "Pristidactylus alvaroi (EN)", "Pristidactylus valeriae (EN)", "Pristidactylus volcanensis (EN)"]
+"Cupressales", "Cupressaceae", 4, ["Hesperocyparis macrocarpa (VU)", "Pilgerodendron uviferum (VU)", "Sequoia sempervirens (EN)", "Fitzroya cupressoides (EN)"]
+"Charadriiformes", "Scolopacidae", 4, ["Tringa flavipes (VU)", "Limosa haemastica (VU)", "Limosa fedoa (VU)", "Calidris fuscicollis (VU)"]
+"Anura", "Bufonidae", 3, ["Rhinella rubropunctata (VU)", "Rhinella atacamensis (VU)", "Rhinella spinulosa (EN)"]
+"Solanales", "Solanaceae", 3, ["Fabiana squamata (EN)", "Solanum lycopersicoides (EN)", "Solanum sitiens (EN)"]
+"Carcharhiniformes", "Triakidae", 3, ["Galeorhinus galeus (CR)", "Mustelus mento (CR)", "Triakis maculata (CR)"]
+"Sphenisciformes", "Spheniscidae", 3, ["Eudyptes chrysocome (VU)", "Spheniscus humboldti (VU)", "Eudyptes robustus (VU)"]
+"Cetacea", "Balaenopteridae", 3, ["Balaenoptera physalus (VU)", "Balaenoptera borealis (EN)", "Balaenoptera musculus (EN)"]
+"Myrtales", "Myrtaceae", 3, ["Eucalyptus leucoxylon (VU)", "Legrandia concinna (EN)", "Myrcianthes coquimbensis (EN)"]
+"Laurales", "Lauraceae", 3, ["Persea americana (VU)", "Beilschmiedia miersii (VU)", "Beilschmiedia berteroana (EN)"]
+"Anura", "Calyptocephalellidae", 3, ["Calyptocephalella gayi (VU)", "Telmatobufo bullocki (EN)", "Telmatobufo venustus (EN)"]
+"Malvales", "Malvaceae", 3, ["Nototriche turritella (VU)", "Hibiscus arnottianus (EN)", "Hibiscus rosa-sinensis (CR)"]
+"Atheriniformes", "Atherinopsidae", 2, ["Basilichthys microlepidotus (VU)", "Odontesthes mauleanum (VU)"]
+comunidad, observadores, obs, especies_amenazadas, ejemplos
+51, 388, 5802, 197, ["Dermochelys coriacea", "Diomedea epomophora", "Eriosyce confinis", "Eriosyce napina", "Eriosyce odieri"]
+971, 412, 3101, 142, ["Diomedea epomophora", "Diomedea exulans", "Eriosyce napina", "Eriosyce odieri", "Eriosyce rodentiophila"]
+4237, 156, 520, 84, ["Gymnopanella nothofagi", "Hippocamelus antisensis", "Liolaemus carlosgarini", "Liolaemus frassinettii", "Liolaemus thermarum"]
+3957, 81, 201, 59, ["Diomedea epomophora", "Genypterus blacodes", "Hippocamelus antisensis", "Lamna nasus", "Notorynchus cepedianus"]
+3420, 121, 165, 58, ["Diomedea epomophora", "Eriosyce odieri", "Hesperocyparis macrocarpa", "Liolaemus carlosgarini", "Mordacia lapicida"]
+5669, 140, 513, 51, ["Eriosyce napina", "Eriosyce odieri", "Eriosyce taltalensis", "Eucalyptus leucoxylon", "Hesperocyparis macrocarpa"]
+4719, 180, 428, 48, ["Diomedea epomophora", "Diomedea exulans", "Eudyptes chrysocome", "Gymnopanella nothofagi", "Hesperocyparis macrocarpa"]
+2524, 164, 380, 46, ["Eriosyce napina", "Persea americana", "Phoenicoparrus andinus", "Pilgerodendron uviferum", "Podocarpus salignus"]
+2666, 77, 245, 45, ["Diomedea epomophora", "Diomedea exulans", "Eriosyce napina", "Eriosyce odieri", "Eriosyce rodentiophila"]
+4328, 85, 166, 41, ["Diomedea epomophora", "Diomedea exulans", "Eudyptes chrysocome", "Hesperocyparis macrocarpa", "Phoenicoparrus andinus"]
+5093, 47, 53, 25, ["Hesperocyparis macrocarpa", "Podocarpus salignus", "Pseudocaranx chilensis", "Tringa flavipes", "Vultur gryphus"]
+3573, 39, 60, 24, ["Genypterus blacodes", "Hesperocyparis macrocarpa", "Lamna nasus", "Phoenicoparrus andinus", "Pilgerodendron uviferum"]
+3797, 48, 58, 20, ["Diomedea epomophora", "Phoenicoparrus andinus", "Spheniscus humboldti", "Thalassarche salvini", "Tringa flavipes"]
+relacion, pares, comunidades, ejemplos
+"distinta clase", 15106, 13, ["Dermochelys coriacea — Diomedea epomophora", "Dermochelys coriacea — Eriosyce confinis", "Dermochelys coriacea — Eriosyce napina", "Dermochelys coriacea — Eriosyce odieri"]
+"misma clase", 1667, 12, ["Dermochelys coriacea — Liolaemus carlosgarini", "Dermochelys coriacea — Liolaemus frassinettii", "Dermochelys coriacea — Liolaemus hellmichi", "Dermochelys coriacea — Pristidactylus torquatus"]

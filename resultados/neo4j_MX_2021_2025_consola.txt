@@ -1,0 +1,60 @@
+[2026-11-18 15:52:58] Exportando obs_america (MX 2021-2025, celda 5 km) desde PostGIS
+AVISO: no hay tabla wdpa; fuera_ap queda vacío (pregunta 1 incompleta)
+== Tamaño del subconjunto exportado ==
+ pais |   anios   | observaciones | especies | observadores | celdas | obs_urbanas | obs_fuera_ap 
+------+-----------+---------------+----------+--------------+--------+-------------+--------------
+ MX   | 2021-2025 |       2483100 |    31120 |        61927 |  41523 |      597001 |            0
+(1 row)
+
+[2026-11-18 15:56:06]    -> 188 s
+total 156936
+drwxr-xr-x 1 Patoloco 197121         0 Nov 18 15:39 .
+drwxr-xr-x 1 Patoloco 197121         0 Nov 18 15:52 ..
+-rw-r--r-- 1 Patoloco 197121   1273268 Nov 18 15:54 celdas.csv
+-rw-r--r-- 1 Patoloco 197121      5449 Nov 18 15:55 introducidas.csv
+-rw-r--r-- 1 Patoloco 197121    476167 Nov 18 15:55 jerarquia.csv
+-rw-r--r-- 1 Patoloco 197121 157520858 Nov 18 15:54 obs.csv
+-rw-r--r-- 1 Patoloco 197121   1401754 Nov 18 15:55 taxones.csv
+ Container neofauna-neo4j Running 
+ Container neofauna-neo4j Waiting 
+ Container neofauna-neo4j Healthy 
+[2026-11-18 15:56:07] Vaciando el grafo de la etapa anterior
+[2026-11-18 15:57:09]    -> 62 s
+[2026-11-18 15:57:25]    -> 16 s
+[2026-11-18 15:57:25] Esquema
+[2026-11-18 15:57:28]    -> 3 s
+[2026-11-18 15:57:30] Carga (LOAD CSV)
+[2026-11-18 16:00:28]    -> 178 s
+[2026-11-18 16:00:28] Derivadas (PRESENTE_EN, REGISTRA, COOCURRE por celda)
+[2026-11-18 16:01:28]    -> 60 s
+[2026-11-18 16:01:28] Comunidades de observadores (GDS)
+grafo, nodos, aristas
+"obs_taxon", 53961, 1015887
+relationshipsWritten, computeMillis
+229785, 21426
+communityCount, modularidad, computeMillis
+16, 0.666, 9047
+comunidades_3_o_mas, mayor, observadores_en_ellas, total_comunidades
+12, 3772, 23022, 16
+graphName
+"obs_taxon"
+[2026-11-18 16:02:04]    -> 36 s
+[2026-11-18 16:02:04] Tamaño del grafo
+etiqueta, nodos
+"Observacion", 2483100
+"Observador", 61927
+"Taxon", 43877
+"Celda", 41523
+"Pais", 1
+tipo, aristas
+"OBSERVO", 2483100
+"DE_TAXON", 2483100
+"EN_CELDA", 2483100
+"COOCURRE", 1206802
+"REGISTRA", 1085558
+"PRESENTE_EN", 974782
+"HIJO_DE", 42219
+"INTRODUCIDA_EN", 501
+[2026-11-18 16:02:10] Pregunta 1
+[2026-11-18 16:02:13] Pregunta 2
+[2026-11-18 16:02:18] Listo: resultados/neo4j_MX_2021_2025_q1.txt y _q2.txt

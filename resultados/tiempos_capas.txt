@@ -1,0 +1,64 @@
+[2026-11-18 17:33:19] taxones
+Timing is on.
+DROP TABLE
+Time: 0.480 ms
+psql:/sql/03_taxones_griis.sql:6: NOTICE:  table "taxones" does not exist, skipping
+CREATE TABLE
+Time: 5.169 ms
+COPY 498455
+Time: 4529.318 ms (00:04.529)
+CREATE INDEX
+Time: 574.425 ms
+CREATE INDEX
+Time: 57.130 ms
+ANALYZE
+Time: 577.984 ms
+DROP TABLE
+Time: 0.238 ms
+psql:/sql/03_taxones_griis.sql:21: NOTICE:  table "griis_raw" does not exist, skipping
+psql:/sql/03_taxones_griis.sql:21: NOTICE:  table "griis" does not exist, skipping
+CREATE TABLE
+Time: 1.427 ms
+COPY 23678
+Time: 70.398 ms
+SELECT 22494
+Time: 262.141 ms
+CREATE INDEX
+Time: 24.089 ms
+ANALYZE
+Time: 49.317 ms
+== Cruce GRIIS <-> taxones COL por nombre canónico ==
+ registros_pais_especie | especies_distintas | con_specieskey | pct_match | marcadas_invasoras 
+------------------------+--------------------+----------------+-----------+--------------------
+                  22494 |              11602 |          18277 |      81.3 |               3169
+(1 row)
+
+Time: 26.494 ms
+[2026-11-18 17:33:26] Natural Earth urban areas
+[2026-11-18 17:33:30] WDPA: /vsizip//capas/wdpa/WDPA_Nov2026_Public.zip/WDPA_Nov2026_Public.gdb  capa WDPA_poly_Nov2026  (solo polígonos que tocan la caja de América)
+Warning 1: organizePolygons() received a polygon with more than 100 parts. The processing may be really slow.  You can skip the processing by setting METHOD=SKIP, or only make it analyze counter-clock wise parts by setting METHOD=ONLY_CCW if you can assume that the outline of holes is counter-clock wise defined. Further messages of this type will be suppressed.
+Warning 1: organizePolygons() received a polygon with more than 100 parts.  The processing may be really slow.  You can skip the processing by setting METHOD=SKIP. Further messages of this type will be suppressed.
+[2026-11-18 17:35:14] Índices, recortes a América y validación
+Timing is on.
+CREATE INDEX
+Time: 39.854 ms
+ANALYZE
+Time: 49.416 ms
+== CRS y validez de las capas ==
+  capa  | poligonos | srid | invalidos | en_america 
+--------+-----------+------+-----------+------------
+ urbano |     11878 | 4326 |         0 |       2137
+(1 row)
+
+Time: 49.511 ms
+psql:/sql/04_capas_indices.sql:25: NOTICE:  table "wdpa_sub" does not exist, skipping
+DO
+Time: 79290.899 ms (01:19.291)
+Time: 0.247 ms
+ capa | poligonos | srid | invalidos | propuestas | paises_iso3 | trozos_subdivididos 
+------+-----------+------+-----------+------------+-------------+---------------------
+ wdpa |     80170 | 4326 |         0 |        552 |          79 |              890248
+(1 row)
+
+Time: 28804.573 ms (00:28.805)
+[2026-11-18 17:37:03] Listo

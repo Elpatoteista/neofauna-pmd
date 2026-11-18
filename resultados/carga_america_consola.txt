@@ -1,0 +1,39 @@
+ Container neofauna-postgis Running 
+ Container neofauna-postgis Waiting 
+ Container neofauna-postgis Healthy 
+[2026-11-18 17:14:11] INICIO carga america -> obs_america  (fuente: unzip -p '/datos/0014768-261110092616502.zip')
+Timing is on.
+BEGIN
+Time: 0.136 ms
+DROP TABLE
+Time: 0.257 ms
+psql:/sql/01_obs_tabla.sql:5: NOTICE:  table "obs_america" does not exist, skipping
+CREATE TABLE
+Time: 10.940 ms
+COPY 96740492
+Time: 728630.182 ms (12:08.630)
+COMMIT
+Time: 87.342 ms
+[2026-11-18 17:26:20] COPY terminado en 729 s
+Timing is on.
+SET
+Time: 0.157 ms
+SET
+Time: 0.088 ms
+ALTER TABLE
+Time: 70877.918 ms (01:10.878)
+CREATE INDEX
+Time: 170057.682 ms (02:50.058)
+CREATE INDEX
+Time: 71624.415 ms (01:11.624)
+CREATE INDEX
+Time: 32598.533 ms (00:32.599)
+VACUUM
+Time: 73048.765 ms (01:13.049)
+    tabla    | datos | indices | total | filas_aprox 
+-------------+-------+---------+-------+-------------
+ obs_america | 27 GB | 7169 MB | 34 GB |    96727040
+(1 row)
+
+Time: 5.243 ms
+[2026-11-18 17:33:19] Índices + VACUUM ANALYZE en 419 s   (total 1148 s)

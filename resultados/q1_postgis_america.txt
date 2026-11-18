@@ -1,0 +1,112 @@
+Timing is on.
+psql:/sql/q1_amenazadas_fuera_ap.sql:12: NOTICE:  table "obs_america_amenazadas" does not exist, skipping
+DROP TABLE
+Time: 0.386 ms
+SELECT 1193504
+Time: 15793.793 ms (00:15.794)
+CREATE INDEX
+Time: 2113.021 ms (00:02.113)
+ANALYZE
+Time: 310.788 ms
+ALTER TABLE
+Time: 0.411 ms
+UPDATE 1193504
+Time: 72320.290 ms (01:12.320)
+
+== Resumen (sin observaciones de especies introducidas en ese país según GRIIS) ==
+ obs_amenazadas | especies_amenazadas | obs_fuera_ap | especies_con_obs_fuera_ap | pct_obs_fuera_ap 
+----------------+---------------------+--------------+---------------------------+------------------
+        1119693 |                6092 |       800240 |                      5250 |             71.5
+(1 row)
+
+Time: 1118.743 ms (00:01.119)
+ obs_excluidas_por_introducidas | especies_excluidas 
+--------------------------------+--------------------
+                          73811 |                 66
+(1 row)
+
+Time: 81.525 ms
+
+== Por categoría IUCN ==
+ iucn | especies |  obs   | pct_fuera_ap 
+------+----------+--------+--------------
+ CR   |      945 | 111349 |         69.0
+ EN   |     2553 | 244751 |         66.2
+ VU   |     2594 | 763593 |         73.5
+(3 rows)
+
+Time: 1320.857 ms (00:01.321)
+
+== Especies amenazadas con más observaciones fuera de áreas protegidas ==
+          especie          | iucn |     clase      |    familia    | obs_fuera_ap |  obs  | pct_fuera | paises 
+---------------------------+------+----------------+---------------+--------------+-------+-----------+--------
+ Terrapene carolina        | VU   | Reptilia       | Emydidae      |        69620 | 74547 |      93.4 |      2
+ Bombus pensylvanicus      | VU   | Insecta        | Apidae        |        46952 | 53201 |      88.3 |      3
+ Cerioporus squamosus      | VU   | Agaricomycetes | Polyporaceae  |        37323 | 45558 |      81.9 |      9
+ Pluvialis squatarola      | VU   | Aves           | Charadriidae  |        20626 | 32152 |      64.2 |     43
+ Gopherus polyphemus       | VU   | Reptilia       | Testudinidae  |        19844 | 23061 |      86.1 |      1
+ Tringa flavipes           | VU   | Aves           | Scolopacidae  |        18395 | 26547 |      69.3 |     49
+ Ferocactus wislizeni      | VU   | Magnoliopsida  | Cactaceae     |        18361 | 21602 |      85.0 |      2
+ Ulmus americana           | EN   | Magnoliopsida  | Ulmaceae      |        17939 | 20771 |      86.4 |      2
+ Podiceps auritus          | VU   | Aves           | Podicipedidae |        16623 | 20638 |      80.5 |      4
+ Storeria occipitomaculata | VU   | Reptilia       | Colubridae    |        14621 | 17617 |      83.0 |      3
+ Limosa fedoa              | VU   | Aves           | Scolopacidae  |        14425 | 22477 |      64.2 |     14
+ Umbellularia californica  | VU   | Magnoliopsida  | Lauraceae     |        13291 | 18855 |      70.5 |      1
+ Limulus polyphemus        | VU   | Merostomata    | Limulidae     |        12794 | 20656 |      61.9 |      2
+ Sequoia sempervirens      | EN   | Pinopsida      | Cupressaceae  |        12608 | 18675 |      67.5 |      4
+ Clangula hyemalis         | VU   | Aves           | Anatidae      |        12467 | 15639 |      79.7 |      4
+ Castanea dentata          | CR   | Magnoliopsida  | Fagaceae      |        11999 | 15594 |      76.9 |      2
+ Hesperiphona vespertina   | VU   | Aves           | Fringillidae  |        11823 | 13564 |      87.2 |      4
+ Bombus fervidus           | VU   | Insecta        | Apidae        |        10816 | 12503 |      86.5 |      3
+ Emydoidea blandingii      | EN   | Reptilia       | Emydidae      |         9832 | 10808 |      91.0 |      2
+ Chaetura pelagica         | VU   | Aves           | Apodidae      |         8687 |  9512 |      91.3 |      8
+ Pinus palustris           | EN   | Pinopsida      | Pinaceae      |         8500 | 11434 |      74.3 |      1
+ Fraxinus pennsylvanica    | CR   | Magnoliopsida  | Oleaceae      |         8242 |  9836 |      83.8 |      2
+ Euphagus carolinus        | VU   | Aves           | Icteridae     |         8033 | 10146 |      79.2 |      3
+ Fraxinus americana        | CR   | Magnoliopsida  | Oleaceae      |         8008 |  9778 |      81.9 |      3
+ Enhydra lutris            | EN   | Mammalia       | Mustelidae    |         7946 | 12905 |      61.6 |      2
+ Juglans cinerea           | EN   | Magnoliopsida  | Juglandaceae  |         7627 |  9225 |      82.7 |      2
+ Bubo scandiacus           | VU   | Aves           | Strigidae     |         6841 |  7740 |      88.4 |      4
+ Fraxinus nigra            | CR   | Magnoliopsida  | Oleaceae      |         6795 |  8821 |      77.0 |      2
+ Bombus terricola          | VU   | Insecta        | Apidae        |         6185 |  7315 |      84.6 |      3
+ Crocodylus acutus         | VU   | Reptilia       | Crocodylidae  |         6123 | 11747 |      52.1 |     17
+(30 rows)
+
+Time: 1823.699 ms (00:01.824)
+
+== Especies CR (en peligro crítico) observadas fuera de áreas protegidas ==
+          especie          |     clase      |                                                           paises                                                           | obs_fuera_ap |  obs  
+---------------------------+----------------+----------------------------------------------------------------------------------------------------------------------------+--------------+-------
+ Castanea dentata          | Magnoliopsida  | CA,US                                                                                                                      |        11999 | 15594
+ Fraxinus pennsylvanica    | Magnoliopsida  | CA,US                                                                                                                      |         8242 |  9836
+ Fraxinus americana        | Magnoliopsida  | AR,CA,MX,US                                                                                                                |         8008 |  9778
+ Fraxinus nigra            | Magnoliopsida  | CA,US                                                                                                                      |         6795 |  8821
+ Bombus affinis            | Insecta        | CA,US                                                                                                                      |         5190 |  5680
+ Gymnogyps californianus   | Aves           | MX,US                                                                                                                      |         2888 |  4950
+ Pycnopodia helianthoides  | Asteroidea     | CA,MX,US                                                                                                                   |         2443 |  3309
+ Gopherus agassizii        | Reptilia       | US                                                                                                                         |         1841 |  3164
+ Pelazoneuron kunthii      | Polypodiopsida | BM,DO,KY,MX,PA,PR,SV,US                                                                                                    |         1480 |  2038
+ Fraxinus quadrangulata    | Magnoliopsida  | CA,US                                                                                                                      |         1382 |  1912
+ Pinus torreyana           | Pinopsida      | US                                                                                                                         |         1301 |  3318
+ Haliotis rufescens        | Gastropoda     | MX,US                                                                                                                      |         1232 |  2296
+ Eretmochelys imbricata    | Reptilia       | AG,AI,AW,BB,BM,BQ,BR,BS,BZ,CO,CR,CU,CW,DM,DO,EC,GD,GF,GP,GT,HN,JM,KN,KY,LC,MF,MQ,MX,NI,PA,PE,PR,SV,SX,TC,TT,US,VC,VE,VG,VI |         1135 |  1997
+ Acropora palmata          | Anthozoa       | AG,AI,AW,BB,BL,BQ,BS,BZ,CO,CR,CU,CW,DM,DO,GD,GP,HN,HT,JM,KN,KY,LC,MF,MQ,MX,NI,PA,PR,SX,TC,TT,US,VC,VE,VG,VI                |          947 |  1802
+ Calochortus tiburonensis  | Liliopsida     | US                                                                                                                         |          923 |  1311
+ Haliotis fulgens          | Gastropoda     | MX,US                                                                                                                      |          887 |  1035
+ Pseudodiploria strigosa   | Anthozoa       | AG,AW,BB,BL,BM,BQ,BS,BZ,CO,CR,CU,CW,DM,DO,GD,GP,HN,HT,JM,KN,KY,LC,MF,MQ,MS,MX,NI,PA,PR,SX,TC,TT,US,VC,VE,VG,VI             |          737 |  2041
+ Diploria labyrinthiformis | Anthozoa       | AG,AI,BB,BL,BM,BQ,BS,BZ,CO,CU,CW,DM,DO,GD,GP,HN,HT,JM,KN,KY,LC,MF,MQ,MX,PA,PR,SX,TC,TT,US,VG,VI                            |          658 |  1172
+ Cedrela odorata           | Magnoliopsida  | AR,BO,BR,BZ,CO,CR,CU,DO,EC,GF,GP,HT,JM,KY,LC,MQ,MX,PA,PE,PR,TT,VE                                                          |          585 |   816
+ Amazona auropalliata      | Aves           | CR,GT,HN,JM,MX,NI,SV,US                                                                                                    |          498 |   714
+ Siderastrea siderea       | Anthozoa       | AG,AW,BB,BL,BM,BQ,BR,BS,BZ,CO,CR,CU,CW,DM,DO,GD,GP,HN,HT,JM,KN,KY,LC,MF,MQ,MX,PA,PR,SX,TC,TT,US,VC,VG,VI                   |          493 |  1327
+ Oxalis corniculata        | Magnoliopsida  | AG,AW,BM,BO,BQ,BS,BZ,CU,DO,EC,GF,GP,HN,HT,KN,LC,MQ,MS,NI,PA,PR,PY,TC,TT,UY,VE,VI                                           |          479 |   546
+ Epinephelus striatus      | Teleostei      | AG,AI,BL,BQ,BS,BZ,CU,GP,HN,KN,KY,MF,MQ,MX,PR,SX,TC,US,VC,VG,VI                                                             |          472 |   750
+ Haliotis cracherodii      | Gastropoda     | MX,US                                                                                                                      |          439 |  1099
+ Lepidochelys kempii       | Reptilia       | BS,CA,MX,US                                                                                                                |          414 |   502
+ Millepora complanata      | Hydrozoa       | AG,AI,AW,BB,BL,BQ,BS,BZ,CO,CR,CU,CW,DO,GD,GP,HN,HT,JM,KN,KY,LC,MF,MQ,MX,NI,PA,PR,SX,TC,TT,US,VC,VG,VI                      |          384 |   678
+ Citrus aurantium          | Magnoliopsida  | BB,CL,CO,DM,DO,EC,GT,HT,KY,PA,PE,PR,TT,US,UY                                                                               |          359 |   562
+ Stenocereus chacalapensis | Magnoliopsida  | CO,MX,SV                                                                                                                   |          359 |   583
+ Acropora cervicornis      | Anthozoa       | AG,AW,BB,BL,BQ,BS,BZ,CO,CU,CW,DM,DO,GP,HN,KN,KY,LC,MF,MX,PA,PR,SX,TC,US,VE,VG,VI                                           |          356 |   680
+ Hibiscus rosa-sinensis    | Magnoliopsida  | AG,AR,AW,BB,BM,BO,BQ,BR,BS,BZ,CA,CL,DM,DO,EC,GD,GF,GP,GT,GY,HN,HT,KN,KY,LC,MQ,NI,PA,PR,SR,SV,TC,TT,VC,VE,VI                |          344 |   400
+(30 rows)
+
+Time: 130.878 ms

@@ -1,0 +1,41 @@
+[2026-11-18 17:11:39] (+0 s) 0. Fuentes
+[2026-11-18 17:11:39] (+0 s)    bajando GRIIS
+[2026-11-18 17:13:25] (+106 s)    bajando Natural Earth urban areas (13 MB)
+[2026-11-18 17:13:27] (+108 s) 1. docker compose up (build)
+ Container neofauna-postgis Waiting 
+ Container neofauna-postgis Healthy 
+ Container neofauna-neo4j Healthy 
+[2026-11-18 17:14:02] (+143 s) 2a. PostGIS: Chile
+[2026-11-18 17:14:09] (+150 s) 2b. PostGIS: América
+[2026-11-18 17:26:20] COPY terminado en 729 s
+[2026-11-18 17:33:19] Índices + VACUUM ANALYZE en 419 s   (total 1148 s)
+[2026-11-18 17:14:06] COPY terminado en 3 s
+[2026-11-18 17:14:09] Índices + VACUUM ANALYZE en 3 s   (total 6 s)
+[2026-11-18 17:33:19] (+1300 s) 3. Capas (taxones, GRIIS, Natural Earth, WDPA)
+[2026-11-18 17:37:03] (+1524 s) 4a. Q3 Chile (25 km)
+[2026-11-18 17:37:08] (+1529 s) 4b. Q3 América (50 km)
+[2026-11-18 17:43:24] (+1905 s) 4c. Q2 Chile
+[2026-11-18 17:43:29] (+1910 s) 4d. Q2 América
+[2026-11-18 17:52:35] (+2456 s) 4e. Q1 América
+[2026-11-18 17:54:11] (+2552 s) 5. Neo4j: obs_chile CL 2015 2026
+[2026-11-18 17:56:50] (+2711 s) 6. Mapas
+[2026-11-18 17:59:31] (+2872 s) Listo. Tamaños:
+         tabla          |  total  
+------------------------+---------
+ obs_america            | 34 GB
+ obs_america_urbano     | 1927 MB
+ wdpa_sub               | 1510 MB
+ wdpa                   | 1260 MB
+ obs_america_amenazadas | 426 MB
+ obs_chile              | 202 MB
+ neo_obs                | 187 MB
+ taxones                | 161 MB
+ urbano                 | 23 MB
+ obs_chile_urbano       | 9424 kB
+ spatial_ref_sys        | 7144 kB
+ griis_raw              | 4352 kB
+(12 rows)
+
+neofauna-pgdata                                                    1         43.79GB
+neofauna-neo4j                                                     1         1.288GB
+[2026-11-18 17:59:32] (+2873 s) FIN (total 2873 s)

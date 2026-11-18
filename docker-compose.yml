@@ -1,0 +1,95 @@
+# Proyecto Neofauna — PostGIS + Neo4j sobre iNaturalist (GBIF)
+#
+#     docker compose up -d --wait     # levanta ambas bases
+#     ./cargar_postgis.sh chile       # o: america
+#     ./cargar_neo4j.sh               # subconjunto (ver README)
+#     docker compose down             # apaga (los datos quedan en los volúmenes con nombre)
+#
+# Memoria pensada para un equipo de 16 GB de RAM en el que Docker Desktop (WSL2) recibe ~7,7 GB.
+# Si se corren cargas pesadas en un motor, conviene detener el otro (docker compose stop neo4j).
+# Puertos SOLO en 127.0.0.1: no quedan expuestos a la red.
+
+services:
+  postgis:
+    build: ./docker
+    image: neofauna-postgis
+    container_name: neofauna-postgis
+    environment:
+      POSTGRES_PASSWORD: ${PG_PASSWORD:-pmd2026}
+    command:
+      - postgres
+      - -c
+      - shared_buffers=2GB
+      - -c
+      - work_mem=64MB
+      - -c
+      - maintenance_work_mem=1GB
+      - -c
+      - effective_cache_size=4GB
+      - -c
+      - max_wal_size=8GB
+      - -c
+      - checkpoint_timeout=30min
+      - -c
+      - wal_level=minimal
+      - -c
+      - max_wal_senders=0
+      - -c
+      - synchronous_commit=off
+      - -c
+      - max_worker_processes=8
+      - -c
+      - max_parallel_workers=8
+      - -c
+      - max_parallel_workers_per_gather=4
+      - -c
+      - max_parallel_maintenance_workers=4
+      - -c
+      - random_page_cost=1.1
+      - -c
+      - jit=off
+    ports:
+      - "127.0.0.1:5440:5432"
+    volumes:
+      - neofauna-pgdata:/var/lib/postgresql/data
+      - ${DATOS_DIR:-./datos}:/datos:ro        # CSV de GBIF (no se versionan)
+      - ./datos/capas:/capas                   # capas complementarias (WDPA, Natural Earth, GRIIS)
+      - ./sql:/sql:ro
+      - ./resultados:/resultados
+    shm_size: 2gb
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+
+  neo4j:
+    image: neo4j:5.26-community
+    container_name: neofauna-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-pmd2026neo}
+      NEO4J_PLUGINS: '["graph-data-science"]'
+      NEO4J_server_memory_heap_initial__size: 2G
+      NEO4J_server_memory_heap_max__size: 2G
+      NEO4J_server_memory_pagecache_size: 1500M
+      NEO4J_dbms_security_procedures_unrestricted: gds.*
+      NEO4J_server_directories_import: /import
+    ports:
+      - "127.0.0.1:7474:7474"
+      - "127.0.0.1:7687:7687"
+    volumes:
+      - neofauna-neo4j:/data
+      - ./resultados/neo4j_import:/import      # CSV exportados desde PostGIS para el grafo
+      - ./cypher:/cypher:ro
+      - ./resultados:/resultados
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 >/dev/null || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
+volumes:
+  neofauna-pgdata:
+    name: neofauna-pgdata
+  neofauna-neo4j:
+    name: neofauna-neo4j

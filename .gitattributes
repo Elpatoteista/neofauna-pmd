@@ -1,0 +1,3 @@
+# Fin de línea LF siempre: los .sh con CRLF fallan en bash ($'\r') al clonar en Windows
+* text=auto eol=lf
+*.png binary

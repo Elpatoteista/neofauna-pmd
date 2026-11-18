@@ -1,0 +1,32 @@
+Timing is on.
+== Por país: obs. urbanas, n.º de introducidas y la introducida urbana más observada ==
+   (EE.UU. domina los totales; el GRIIS de EE.UU. v2.0 no informa isInvasive, por eso "estricta" sale falso allí)
+ pais | obs_urbanas | especies_introducidas |     mas_observada     | obs_de_esa 
+------+-------------+-----------------------+-----------------------+------------
+ US   |    21491722 |                  3735 | Apis mellifera        |     168547
+ CA   |     2932335 |                   937 | Harmonia axyridis     |      17723
+ MX   |     1000522 |                   417 | Passer domesticus     |      18001
+ BR   |      493193 |                   518 | Apis mellifera        |       4062
+ AR   |      465983 |                   382 | Harmonia axyridis     |       4529
+ CL   |      126572 |                   335 | Bombus terrestris     |        889
+ CO   |      115219 |                   224 | Apis mellifera        |       1393
+ EC   |       76961 |                     0 |                       |           
+ PE   |       65251 |                   206 | Columba livia         |       1753
+ PR   |       40834 |                     0 |                       |           
+ PA   |       40406 |                    72 | Sicalis flaveola      |        423
+ BO   |       37784 |                   105 | Columba livia         |       1149
+ CR   |       33607 |                   136 | Columba livia         |        283
+ UY   |       31444 |                    59 | Carpobrotus edulis    |        189
+ VE   |       22714 |                    92 | Gonatodes vittatus    |        418
+ TT   |        8735 |                    51 | Anolis aeneus         |        353
+ AW   |        8202 |                    49 | Quiscalus lugubris    |        195
+ GT   |        8170 |                    88 | Columba livia         |         86
+ SV   |        7891 |                    84 | Columba livia         |         62
+ DO   |        7763 |                   103 | Columba livia         |        161
+ CW   |        6325 |                    81 | Calotropis procera    |        109
+ HN   |        5549 |                    72 | Hemidactylus frenatus |         24
+ PY   |        5467 |                    30 | Passer domesticus     |         46
+(23 rows)
+
+Time: 1483.617 ms (00:01.484)
+

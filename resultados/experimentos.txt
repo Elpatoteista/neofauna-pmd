@@ -1,0 +1,144 @@
+Timing is on.
+Pager usage is off.
+===== E1. Punto en polígono contra la WDPA: polígonos enteros vs. ST_Subdivide(256) =====
+      (observaciones amenazadas de Chile y Brasil; mismo resultado, distinto costo)
+DROP TABLE
+Time: 0.291 ms
+psql:/sql/experimentos.sql:8: NOTICE:  table "exp_pts" does not exist, skipping
+SELECT 46150
+Time: 68.634 ms
+CREATE INDEX
+Time: 71.471 ms
+ANALYZE
+Time: 84.643 ms
+ puntos 
+--------
+  46150
+(1 row)
+
+Time: 2.712 ms
+ vertices_medios_wdpa | vertices_max_wdpa | vertices_medios_sub 
+----------------------+-------------------+---------------------
+                  952 |           1874035 |                  86
+(1 row)
+
+Time: 2484.568 ms (00:02.485)
+-- E1a polígonos enteros
+psql:/sql/experimentos.sql:18: ERROR:  canceling statement due to user request
+Time: 1197562.488 ms (19:57.562)
+-- E1b polígonos subdivididos
+                                   QUERY PLAN                                    
+---------------------------------------------------------------------------------
+ Aggregate (actual rows=1 loops=1)
+   ->  Seq Scan on exp_pts p (actual rows=46150 loops=1)
+   SubPlan 1
+     ->  Index Scan using wdpa_sub_gix on wdpa_sub w (actual rows=0 loops=46150)
+           Index Cond: (geom && p.geom)
+           Filter: st_intersects(geom, p.geom)
+           Rows Removed by Filter: 0
+ Planning Time: 1.360 ms
+ Execution Time: 2167.253 ms
+(9 rows)
+
+Time: 2169.527 ms (00:02.170)
+
+===== E2. Cruce con zonas urbanas (Chile): con y sin índice GiST =====
+-- E2a con índices
+                                            QUERY PLAN                                             
+---------------------------------------------------------------------------------------------------
+ Finalize Aggregate (actual rows=1 loops=1)
+   ->  Gather (actual rows=4 loops=1)
+         Workers Planned: 3
+         Workers Launched: 3
+         ->  Partial Aggregate (actual rows=1 loops=4)
+               ->  Nested Loop (actual rows=31606 loops=4)
+                     ->  Parallel Seq Scan on obs_chile o (actual rows=134446 loops=4)
+                     ->  Index Scan using urbano_geom_gix on urbano u (actual rows=0 loops=537785)
+                           Index Cond: (geom && o.geom)
+                           Filter: st_intersects(geom, o.geom)
+                           Rows Removed by Filter: 0
+ Planning Time: 4.686 ms
+ Execution Time: 2856.409 ms
+(13 rows)
+
+Time: 2861.732 ms (00:02.862)
+-- E2b sin índices (enable_indexscan / bitmapscan = off)
+SET
+Time: 0.114 ms
+SET
+Time: 0.083 ms
+                                      QUERY PLAN                                       
+---------------------------------------------------------------------------------------
+ Finalize Aggregate (actual rows=1 loops=1)
+   ->  Gather (actual rows=4 loops=1)
+         Workers Planned: 3
+         Workers Launched: 3
+         ->  Partial Aggregate (actual rows=1 loops=4)
+               ->  Nested Loop (actual rows=31606 loops=4)
+                     Join Filter: st_intersects(u.geom, o.geom)
+                     Rows Removed by Join Filter: 1596920952
+                     ->  Parallel Seq Scan on obs_chile o (actual rows=134446 loops=4)
+                     ->  Seq Scan on urbano u (actual rows=11878 loops=537785)
+ Planning Time: 0.482 ms
+ Execution Time: 654187.890 ms
+(12 rows)
+
+Time: 654189.208 ms (10:54.189)
+RESET
+Time: 0.215 ms
+RESET
+Time: 0.167 ms
+
+===== E3. Q3: plan de la asignación a celdas (Chile, mismo SQL que América) =====
+                                                                                                    QUERY PLAN                                                                                                    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate (actual rows=4495 loops=1)
+   Group Key: ((floor((st_x(st_transform(geom, 6933)) / '25000'::double precision)))::integer), ((floor((st_y(st_transform(geom, 6933)) / '25000'::double precision)))::integer), estacion
+   ->  Gather Merge (actual rows=369169 loops=1)
+         Workers Planned: 3
+         Workers Launched: 3
+         ->  Sort (actual rows=92292 loops=4)
+               Sort Key: ((floor((st_x(st_transform(geom, 6933)) / '25000'::double precision)))::integer), ((floor((st_y(st_transform(geom, 6933)) / '25000'::double precision)))::integer), estacion, specieskey
+               Sort Method: quicksort  Memory: 7922kB
+               Worker 0:  Sort Method: quicksort  Memory: 7184kB
+               Worker 1:  Sort Method: quicksort  Memory: 7257kB
+               Worker 2:  Sort Method: quicksort  Memory: 7232kB
+               ->  Parallel Seq Scan on obs_chile (actual rows=92292 loops=4)
+                     Filter: ((specieskey IS NOT NULL) AND (year >= 2021) AND (year <= 2025))
+                     Rows Removed by Filter: 42154
+ Planning Time: 0.844 ms
+ Execution Time: 409.192 ms
+(16 rows)
+
+Time: 413.347 ms
+
+===== E4. Mitigación de la coocurrencia: pares de observaciones vs. pares de especies por celda (neo_obs = Chile 2015–2026) =====
+      ambito      | celdas |  obs   |     pares_de_observaciones     |  pares_de_especies_por_celda  | pares_obs_sin_celdas  
+------------------+--------+--------+--------------------------------+-------------------------------+-----------------------
+ todas las celdas |  16482 | 525767 | 239628261.00000000000000000000 | 15083842.00000000000000000000 | 138215206261.00000000
+ celdas urbanas   |    402 | 123123 | 114157318.00000000000000000000 |  5413336.00000000000000000000 |                      
+(2 rows)
+
+Time: 1611.078 ms (00:01.611)
+
+===== E5. Índices: tamaño y uso real (pg_stat_user_indexes) =====
+         tabla          |             indice              | lecturas | tamano  
+------------------------+---------------------------------+----------+---------
+ obs_america            | obs_america_geom_gix            |        0 | 3809 MB
+ obs_america            | obs_america_pk                  |        0 | 2072 MB
+ obs_america            | obs_america_specieskey_ix       |        9 | 648 MB
+ obs_america            | obs_america_year_ix             |        2 | 639 MB
+ obs_america_urbano     | obs_america_urbano_gbifid_idx   |        0 | 580 MB
+ obs_america_amenazadas | obs_america_amenazadas_geom_idx |        1 | 96 MB
+ neo_obs                | neo_obs_geom_idx                |        1 | 42 MB
+ wdpa_sub               | wdpa_sub_gix                    |  1765421 | 35 MB
+ obs_chile              | obs_chile_geom_gix              |        0 | 21 MB
+ taxones                | taxones_species_idx             |    22641 | 17 MB
+ taxones                | taxones_pkey                    |    17528 | 15 MB
+ obs_chile              | obs_chile_pk                    |        0 | 12 MB
+ obs_chile              | obs_chile_specieskey_ix         |        5 | 3880 kB
+ obs_chile              | obs_chile_year_ix               |        0 | 3664 kB
+ obs_chile_urbano       | obs_chile_urbano_gbifid_idx     |        0 | 2728 kB
+(15 rows)
+
+Time: 8.298 ms

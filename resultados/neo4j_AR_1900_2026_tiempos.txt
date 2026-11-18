@@ -1,0 +1,66 @@
+[2026-11-18 15:48:31] Exportando obs_america (AR 1900-2026, celda 5 km) desde PostGIS
+[2026-11-18 15:49:40]    -> 69 s
+AVISO: no hay tabla wdpa; fuera_ap queda vacío (pregunta 1 incompleta)
+== Tamaño del subconjunto exportado ==
+ pais |   anios   | observaciones | especies | observadores | celdas | obs_urbanas | obs_fuera_ap 
+------+-----------+---------------+----------+--------------+--------+-------------+--------------
+ AR   | 1900-2026 |       1360056 |    15430 |        15149 |  31739 |      465983 |            0
+(1 row)
+
+[2026-11-18 15:49:40]    -> 69 s
+total 84320
+drwxr-xr-x 1 Patoloco 197121        0 Nov 18 15:39 .
+drwxr-xr-x 1 Patoloco 197121        0 Nov 18 15:46 ..
+-rw-r--r-- 1 Patoloco 197121  1023472 Nov 18 15:49 celdas.csv
+-rw-r--r-- 1 Patoloco 197121     4954 Nov 18 15:49 introducidas.csv
+-rw-r--r-- 1 Patoloco 197121   257072 Nov 18 15:49 jerarquia.csv
+-rw-r--r-- 1 Patoloco 197121 84289315 Nov 18 15:49 obs.csv
+-rw-r--r-- 1 Patoloco 197121   748218 Nov 18 15:49 taxones.csv
+[2026-11-18 15:49:41] Vaciando el grafo de la etapa anterior
+[2026-11-18 15:50:09]    -> 28 s
+[2026-11-18 15:50:09]    -> 28 s
+[2026-11-18 15:50:17]    -> 8 s
+[2026-11-18 15:50:17]    -> 8 s
+[2026-11-18 15:50:17] Esquema
+[2026-11-18 15:50:20]    -> 3 s
+[2026-11-18 15:50:20]    -> 3 s
+[2026-11-18 15:50:22] Carga (LOAD CSV)
+[2026-11-18 15:51:51]    -> 88 s
+[2026-11-18 15:51:51]    -> 88 s
+[2026-11-18 15:51:51] Derivadas (PRESENTE_EN, REGISTRA, COOCURRE por celda)
+[2026-11-18 15:52:24]    -> 33 s
+[2026-11-18 15:52:24]    -> 33 s
+[2026-11-18 15:52:25] Comunidades de observadores (GDS)
+grafo, nodos, aristas
+"obs_taxon", 21710, 473501
+relationshipsWritten, computeMillis
+63427, 2874
+communityCount, modularidad, computeMillis
+16, 0.654, 6038
+comunidades_3_o_mas, mayor, observadores_en_ellas, total_comunidades
+12, 1344, 6362, 16
+graphName
+"obs_taxon"
+[2026-11-18 15:52:37]    -> 12 s
+[2026-11-18 15:52:37]    -> 12 s
+[2026-11-18 15:52:37] Tamaño del grafo
+etiqueta, nodos
+"Observacion", 1360056
+"Celda", 31739
+"Taxon", 24016
+"Observador", 15149
+"Pais", 1
+tipo, aristas
+"OBSERVO", 1360056
+"DE_TAXON", 1360056
+"EN_CELDA", 1360056
+"COOCURRE", 792015
+"PRESENTE_EN", 512883
+"REGISTRA", 488944
+"HIJO_DE", 22996
+"INTRODUCIDA_EN", 456
+[2026-11-18 15:52:43] Pregunta 1
+[2026-11-18 15:52:45]    -> 2 s
+[2026-11-18 15:52:45] Pregunta 2
+[2026-11-18 15:52:50]    -> 4 s
+[2026-11-18 15:52:50] Listo: resultados/neo4j_AR_1900_2026_q1.txt y _q2.txt
