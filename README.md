@@ -185,7 +185,7 @@ El costo crece de forma aproximadamente lineal con las observaciones; la coocurr
 
 | Experimento | Resultado |
 |---|---|
-| E1 punto-en-polígono WDPA, 46.150 puntos (CL+BR): polígonos enteros vs. `ST_Subdivide(256)` | > 1.197 s (cancelado) vs. **2,2 s** (> 550×). Vértices medios 952 → 86; el mayor polígono tiene 1,87 M |
+| E1 punto-en-polígono WDPA, 46.150 puntos (CL+BR): polígonos enteros vs. `ST_Subdivide(256)` | > 1.197,6 s (cancelado) vs. **2,17 s** (> 550×; 552,6, cota inferior). Vértices medios 952 → 86; el mayor polígono tiene 1,87 M |
 | E2 obs. de Chile × zonas urbanas: con vs. sin GiST | **2,9 s** vs. 654 s (×229; 1.597 M de pares descartados) |
 | E3 asignación a celdas (Q3, Chile) | Parallel Seq Scan + Sort + GroupAggregate, 0,41 s: no usa índices |
 | E4 coocurrencia Chile: pares de especies por celda vs. pares de observaciones | 15,1 M vs. 240 M dentro de celdas (×16) vs. 138.215 M sin celdas |
