@@ -71,6 +71,18 @@ Paso a paso (lo mismo que hace `reproducir.sh`):
 
 (En Git Bash para Windows los scripts exportan `MSYS_NO_PATHCONV=1` para que no se traduzcan las rutas `/sql`, `/datos`.)
 
+## Citación de los datos y licencias
+
+Las descargas de GBIF exigen citar su DOI en cualquier publicación:
+
+* GBIF.org (18 November 2026) GBIF Occurrence Download <https://doi.org/10.15468/dl.8hgded> (América, `0014768-261110092616502`).
+* GBIF.org (18 November 2026) GBIF Occurrence Download <https://doi.org/10.15468/dl.5gu3zk> (Chile 2015–2026, `0014759-261110092616502`).
+* iNaturalist contributors, iNaturalist (2026). iNaturalist Research-grade Observations. iNaturalist.org. Occurrence dataset <https://doi.org/10.15468/ab3s5x> accessed via GBIF.org on 2026-11-18. Licencia CC BY-NC 4.0.
+* Bánki, O., Roskov, Y., Döring, M., Ower, G., et al. (2026). Catalogue of Life (2026-10-16 XR). <https://doi.org/10.48580/dgzlf>. CC BY 4.0.
+* UNEP-WCMC and IUCN (2026), Protected Planet: The World Database on Protected and Conserved Areas (WDPCA) [On-line], November 2026, Cambridge, UK: UNEP-WCMC and IUCN. Available at: www.protectedplanet.net. Solo uso no comercial y sin redistribución: por eso la WDPA **no** está en este repositorio.
+* GRIIS (ISSG): las 44 citas, con su DOI, en `resultados/griis_citas.txt` (42 CC BY 4.0, 2 CC0 1.0).
+* Made with Natural Earth. Free vector and raster map data @ naturalearthdata.com (Urban Areas 1:10m, v4.1.0, dominio público).
+
 ## Decisiones técnicas
 
 * **Columnas**: de las 50 columnas del CSV *Simple* se cargan 23 (`cut`). `taxonKey`/`speciesKey` son claves
@@ -124,9 +136,13 @@ lectura 1 min 51 s; 552 "Proposed" excluidas) subdivididos con `ST_Subdivide(256
 * Neo4j (Chile 2015–2026, 389.141 obs. fuera de AP): *Bombus dahlbomii* (EN), cóndor, *Citronella mucronata*,
   palma chilena, chungungo. Taxonómicamente se concentran en Cactaceae (33 especies), Liolaemidae (20),
   Alsodidae (16) y Procellariiformes. Louvain: 15 comunidades de observadores (modularidad 0,69); las 2 mayores
-  registran 197 y 142 especies amenazadas fuera de AP. El 90 % de los pares de especies amenazadas unidos por una
-  misma comunidad son de **clases distintas** (p.ej. tortuga laúd — cactus *Eriosyce*): las comunidades de
-  observadores conectan taxones lejanos en el árbol taxonómico.
+  registran 197 y 142 especies amenazadas fuera de AP. El 90,1 % de los pares de especies amenazadas unidos por
+  una misma comunidad son de clases distintas, pero **no es distintivo**: la línea base (todos los pares posibles
+  de las mismas 163 especies) da 91,0 %, y todas las amenazadas fuera de AP 91,9 %
+  (`cypher/q1_linea_base.cypher` → `resultados/neo4j_CL_2015_2026_q1_linea_base.txt`). El porcentaje refleja la
+  mezcla de clases, no que las comunidades crucen el árbol taxonómico más que el azar.
+* Alcance: la parte PostGIS de las preguntas 1 y 2 es continental; la parte de grafo es de Chile (Argentina y
+  México solo como etapas de escalamiento y contraste de la pregunta 2). No se extrapola a América.
 
 ### Pregunta 3 — hotspots de riqueza (`resultados/q3_*.txt`, `mapas/q3_*.png`)
 
