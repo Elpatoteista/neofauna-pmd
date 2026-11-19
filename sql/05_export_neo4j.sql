@@ -72,8 +72,8 @@ COPY (
 TO '/resultados/neo4j_import/jerarquia.csv' WITH (FORMAT csv, HEADER true);
 
 -- ---- Estatus de introducción (GRIIS) en el país del subconjunto -------------------------------------------
-COPY (SELECT DISTINCT g.specieskey, g.countrycode, g.invasora
-      FROM griis g JOIN neo_tax t ON t.taxonkey = g.specieskey WHERE g.countrycode = :'pais')
+COPY (SELECT g.specieskey, g.countrycode, bool_or(g.invasora) AS invasora   -- un registro por (especie, país)
+      FROM griis g JOIN neo_tax t ON t.taxonkey = g.specieskey WHERE g.countrycode = :'pais' GROUP BY 1, 2)
 TO '/resultados/neo4j_import/introducidas.csv' WITH (FORMAT csv, HEADER true);
 
 \echo '== Tamaño del subconjunto exportado =='

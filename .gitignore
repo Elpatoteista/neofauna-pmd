@@ -13,3 +13,6 @@ resultados/neo4j_import/
 !resultados/*.txt
 __pycache__/
 .venv/
+
+# respaldos locales de .env que deja actualizar_taxones.sh
+.env.bak*

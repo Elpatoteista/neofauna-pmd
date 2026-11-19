@@ -13,7 +13,28 @@ CREATE TABLE taxones (
 );
 \set copy_tax 'COPY taxones FROM ' :'csv_taxones' ' WITH (FORMAT csv, DELIMITER E''\t'', QUOTE E''\x01'', NULL '''', HEADER true)'
 :copy_tax;
+
+-- La lista de especies de GBIF tiene una fila por NOMBRE CON QUE SE IDENTIFICÓ cada observación, no por especie
+-- aceptada: si todas las observaciones de una especie usan un sinónimo (p.ej. la rana toro identificada como
+-- "Lithobates catesbeianus"), la especie aceptada (Aquarana catesbeiana, la speciesKey de las observaciones) no
+-- tiene fila propia y el join por taxonKey la pierde. Se agrega una fila DERIVADA por cada speciesKey sin fila,
+-- con la jerarquía de la fila de origen (sinónimo o subespecie). La IUCN queda vacía: la lista solo trae la
+-- categoría del nombre usado (NE en los sinónimos), no la de la especie aceptada.
+INSERT INTO taxones (taxonkey, scientificname, acceptedtaxonkey, acceptedscientificname, numberofoccurrences,
+                     taxonrank, taxonomicstatus, kingdom, kingdomkey, phylum, phylumkey, class, classkey,
+                     "order", orderkey, family, familykey, genus, genuskey, species, specieskey, iucn)
+SELECT DISTINCT ON (x.specieskey)
+       x.specieskey, x.species, x.specieskey, x.species,
+       sum(x.numberofoccurrences) OVER (PARTITION BY x.specieskey),
+       'SPECIES', 'DERIVADA', x.kingdom, x.kingdomkey, x.phylum, x.phylumkey, x.class, x.classkey,
+       x."order", x.orderkey, x.family, x.familykey, x.genus, x.genuskey, x.species, x.specieskey, NULL
+FROM taxones x
+WHERE x.specieskey IS NOT NULL
+  AND NOT EXISTS (SELECT 1 FROM taxones y WHERE y.taxonkey = x.specieskey)
+ORDER BY x.specieskey, (x.taxonrank = 'SPECIES') DESC, x.numberofoccurrences DESC NULLS LAST;
+
 CREATE INDEX ON taxones (species);
+CREATE INDEX taxones_canon_ix ON taxones ((split_part(scientificname, ' ', 1) || ' ' || split_part(scientificname, ' ', 2)));
 CREATE INDEX ON taxones (iucn) WHERE iucn IN ('VU', 'EN', 'CR');
 ANALYZE taxones;
 
@@ -32,7 +53,7 @@ SELECT DISTINCT ON (g.countrycode, canon)
        g.countrycode, g.pais, canon AS especie,
        bool_or(lower(coalesce(g.isinvasive, '')) LIKE 'invasive%')
            OVER (PARTITION BY g.countrycode, canon) AS invasora,
-       t.taxonkey AS specieskey
+       t.specieskey
 FROM (SELECT *, initcap(split_part(trim(scientificname), ' ', 1)) || ' ' ||
                 lower(split_part(trim(scientificname), ' ', 2)) AS canon
       FROM griis_raw
@@ -41,9 +62,16 @@ FROM (SELECT *, initcap(split_part(trim(scientificname), ' ', 1)) || ' ' ||
         -- solo en esa isla/estado (p.ej. el zorzal o el maqui, nativos de Chile continental, son introducidos
         -- en Juan Fernández). Se excluyen para no marcar nativas como introducidas a nivel de país.
         AND pais NOT IN ('Juan Fernandez Islands, Chile', 'Alaska, United States')) g
-LEFT JOIN LATERAL (SELECT taxonkey FROM taxones t
-                   WHERE t.species = g.canon AND t.taxonrank = 'SPECIES'
-                   ORDER BY (t.taxonomicstatus = 'ACCEPTED') DESC, t.numberofoccurrences DESC NULLS LAST
+-- El nombre GRIIS calza con el nombre ACEPTADO (columna species) o con el nombre usado, que puede ser un
+-- sinónimo (scientificName sin autoría): GRIIS de AR, CO, PE… escribe "Lithobates catesbeianus", sinónimo de
+-- Aquarana catesbeiana. Se toma la speciesKey aceptada. Nombres que la lista no trae ("Rana catesbeiana")
+-- siguen sin calzar: resolverlos exige los sinónimos completos de Catalogue of Life.
+LEFT JOIN LATERAL (SELECT t.specieskey FROM taxones t
+                   WHERE t.taxonrank = 'SPECIES' AND t.specieskey IS NOT NULL
+                     AND (t.species = g.canon
+                          OR split_part(t.scientificname, ' ', 1) || ' ' || split_part(t.scientificname, ' ', 2) = g.canon)
+                   ORDER BY (t.species = g.canon) DESC, (t.taxonomicstatus = 'ACCEPTED') DESC,
+                            t.numberofoccurrences DESC NULLS LAST
                    LIMIT 1) t ON true
 ORDER BY g.countrycode, canon;
 CREATE INDEX ON griis (specieskey, countrycode);

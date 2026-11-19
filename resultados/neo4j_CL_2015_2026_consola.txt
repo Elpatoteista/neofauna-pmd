@@ -1,61 +1,59 @@
-[2026-11-18 17:54:12] Exportando obs_chile (CL 2015-2026, celda 5 km) desde PostGIS
-psql:/sql/05_export_neo4j.sql:7: NOTICE:  table "neo_obs" does not exist, skipping
-psql:/sql/05_export_neo4j.sql:38: NOTICE:  table "neo_tax" does not exist, skipping
+[2026-11-18 23:49:06] Exportando obs_chile (CL 2015-2026, celda 5 km) desde PostGIS
 == Tamaño del subconjunto exportado ==
  pais |   anios   | observaciones | especies | observadores | celdas | obs_urbanas | obs_fuera_ap 
 ------+-----------+---------------+----------+--------------+--------+-------------+--------------
  CL   | 2015-2026 |        525767 |     9075 |        14207 |  16482 |      123123 |       389141
 (1 row)
 
-[2026-11-18 17:55:04]    -> 52 s
-total 34084
+[2026-11-18 23:49:58]    -> 52 s
+total 34112
 drwxr-xr-x 1 Patoloco 197121        0 Nov 18 15:39 .
-drwxr-xr-x 1 Patoloco 197121        0 Nov 18 17:54 ..
--rw-r--r-- 1 Patoloco 197121   532886 Nov 18 17:54 celdas.csv
--rw-r--r-- 1 Patoloco 197121     4767 Nov 18 17:55 introducidas.csv
--rw-r--r-- 1 Patoloco 197121   159637 Nov 18 17:55 jerarquia.csv
--rw-r--r-- 1 Patoloco 197121 33713264 Nov 18 17:54 obs.csv
--rw-r--r-- 1 Patoloco 197121   463098 Nov 18 17:55 taxones.csv
+drwxr-xr-x 1 Patoloco 197121        0 Nov 18 22:55 ..
+-rw-r--r-- 1 Patoloco 197121   532886 Nov 18 23:49 celdas.csv
+-rw-r--r-- 1 Patoloco 197121     4866 Nov 18 23:49 introducidas.csv
+-rw-r--r-- 1 Patoloco 197121   168030 Nov 18 23:49 jerarquia.csv
+-rw-r--r-- 1 Patoloco 197121 33713264 Nov 18 23:49 obs.csv
+-rw-r--r-- 1 Patoloco 197121   482735 Nov 18 23:49 taxones.csv
  Container neofauna-neo4j Running 
  Container neofauna-neo4j Waiting 
  Container neofauna-neo4j Healthy 
-[2026-11-18 17:55:05] Vaciando el grafo de la etapa anterior
-[2026-11-18 17:55:12]    -> 7 s
-[2026-11-18 17:55:15]    -> 3 s
-[2026-11-18 17:55:15] Esquema
-[2026-11-18 17:55:18]    -> 3 s
-[2026-11-18 17:55:20] Carga (LOAD CSV)
-[2026-11-18 17:56:06]    -> 46 s
-[2026-11-18 17:56:06] Derivadas (PRESENTE_EN, REGISTRA, COOCURRE por celda)
-[2026-11-18 17:56:26]    -> 20 s
-[2026-11-18 17:56:26] Comunidades de observadores (GDS)
+[2026-11-18 23:49:59] Vaciando el grafo de la etapa anterior
+[2026-11-18 23:50:42]    -> 43 s
+[2026-11-18 23:50:52]    -> 10 s
+[2026-11-18 23:50:52] Esquema
+[2026-11-18 23:50:54]    -> 2 s
+[2026-11-18 23:50:57] Carga (LOAD CSV)
+[2026-11-18 23:51:38]    -> 41 s
+[2026-11-18 23:51:38] Derivadas (PRESENTE_EN, REGISTRA, COOCURRE por celda)
+[2026-11-18 23:51:57]    -> 19 s
+[2026-11-18 23:51:57] Comunidades de observadores (GDS)
 grafo, nodos, aristas
 "obs_taxon", 15291, 268008
 relationshipsWritten, computeMillis
-62982, 1991
+62982, 3600
 communityCount, modularidad, computeMillis
-13, 0.696, 3264
+13, 0.697, 573
 comunidades_3_o_mas, mayor, observadores_en_ellas, total_comunidades
-12, 891, 6307, 13
+12, 919, 6307, 13
 graphName
 "obs_taxon"
-[2026-11-18 17:56:36]    -> 10 s
-[2026-11-18 17:56:36] Tamaño del grafo
+[2026-11-18 23:52:05]    -> 8 s
+[2026-11-18 23:52:05] Tamaño del grafo
 etiqueta, nodos
 "Observacion", 525767
 "Celda", 16482
-"Taxon", 15024
+"Taxon", 15260
 "Observador", 14207
 "Pais", 1
 tipo, aristas
 "OBSERVO", 525767
 "DE_TAXON", 525767
 "EN_CELDA", 525767
-"COOCURRE", 491777
+"COOCURRE", 501380
 "REGISTRA", 282110
 "PRESENTE_EN", 244092
-"HIJO_DE", 14405
-"INTRODUCIDA_EN", 438
-[2026-11-18 17:56:42] Pregunta 1
-[2026-11-18 17:56:46] Pregunta 2
-[2026-11-18 17:56:50] Listo: resultados/neo4j_CL_2015_2026_q1.txt y _q2.txt
+"HIJO_DE", 15151
+"INTRODUCIDA_EN", 447
+[2026-11-18 23:52:10] Pregunta 1
+[2026-11-18 23:52:13] Pregunta 2
+[2026-11-18 23:52:17] Listo: resultados/neo4j_CL_2015_2026_q1.txt y _q2.txt

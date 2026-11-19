@@ -17,7 +17,11 @@ SELECT o.gbifid, u.id AS urbano_id, o.specieskey, o.countrycode,
        coalesce(g.invasora, false) AS invasora_estricta
 FROM :tabla o
 JOIN urbano u ON ST_Intersects(u.geom, o.geom)
-LEFT JOIN griis g ON g.specieskey = o.specieskey AND g.countrycode = o.countrycode
+-- GRIIS agrupado por (país, especie): un país puede listar dos nombres que hoy son la misma especie aceptada
+-- (p.ej. Sansevieria y Dracaena trifasciata); sin agrupar, la observación se duplicaría en el join.
+LEFT JOIN (SELECT specieskey, countrycode, bool_or(invasora) AS invasora
+           FROM griis WHERE specieskey IS NOT NULL GROUP BY 1, 2) g
+       ON g.specieskey = o.specieskey AND g.countrycode = o.countrycode
 WHERE o.specieskey IS NOT NULL;
 CREATE INDEX ON :urb (gbifid);
 ANALYZE :urb;

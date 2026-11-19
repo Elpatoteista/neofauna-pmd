@@ -8,7 +8,8 @@ WITH t, p.comunidad AS com, count(DISTINCT p) AS nobs WHERE nobs >= 2
 WITH com, collect(t) AS esps WHERE size(esps) >= 2
 UNWIND esps AS a UNWIND esps AS b
 WITH com, a, b WHERE a.key < b.key
-MATCH (a)-[:HIJO_DE*]->(ca:Taxon {rango: 'CLASS'}), (b)-[:HIJO_DE*]->(cb:Taxon {rango: 'CLASS'})
+MATCH (a)-[:HIJO_DE*]->(ca:Taxon {rango: 'CLASS'})
+MATCH (b)-[:HIJO_DE*]->(cb:Taxon {rango: 'CLASS'})
 RETURN 'a1 observado (por comunidad)' AS medida, count(*) AS pares,
        round(100.0 * sum(CASE WHEN ca <> cb THEN 1 ELSE 0 END) / count(*), 1) AS pct_distinta_clase;
 
@@ -19,7 +20,8 @@ WITH t, p.comunidad AS com, count(DISTINCT p) AS nobs WHERE nobs >= 2
 WITH com, collect(t) AS esps WHERE size(esps) >= 2
 UNWIND esps AS a UNWIND esps AS b
 WITH DISTINCT a, b WHERE a.key < b.key
-MATCH (a)-[:HIJO_DE*]->(ca:Taxon {rango: 'CLASS'}), (b)-[:HIJO_DE*]->(cb:Taxon {rango: 'CLASS'})
+MATCH (a)-[:HIJO_DE*]->(ca:Taxon {rango: 'CLASS'})
+MATCH (b)-[:HIJO_DE*]->(cb:Taxon {rango: 'CLASS'})
 RETURN 'a2 observado (pares distintos)' AS medida, count(*) AS pares,
        round(100.0 * sum(CASE WHEN ca <> cb THEN 1 ELSE 0 END) / count(*), 1) AS pct_distinta_clase;
 
@@ -30,7 +32,8 @@ WITH t, p.comunidad AS com, count(DISTINCT p) AS nobs WHERE nobs >= 2
 WITH collect(DISTINCT t) AS esps
 UNWIND esps AS a UNWIND esps AS b
 WITH a, b WHERE a.key < b.key
-MATCH (a)-[:HIJO_DE*]->(ca:Taxon {rango: 'CLASS'}), (b)-[:HIJO_DE*]->(cb:Taxon {rango: 'CLASS'})
+MATCH (a)-[:HIJO_DE*]->(ca:Taxon {rango: 'CLASS'})
+MATCH (b)-[:HIJO_DE*]->(cb:Taxon {rango: 'CLASS'})
 RETURN 'b base: todos los pares, mismas especies' AS medida, count(*) AS pares,
        round(100.0 * sum(CASE WHEN ca <> cb THEN 1 ELSE 0 END) / count(*), 1) AS pct_distinta_clase;
 
@@ -40,7 +43,8 @@ WHERE t.iucn IN ['VU', 'EN', 'CR'] AND NOT (t)-[:INTRODUCIDA_EN]->(:Pais)
 WITH collect(DISTINCT t) AS esps
 UNWIND esps AS a UNWIND esps AS b
 WITH a, b WHERE a.key < b.key
-MATCH (a)-[:HIJO_DE*]->(ca:Taxon {rango: 'CLASS'}), (b)-[:HIJO_DE*]->(cb:Taxon {rango: 'CLASS'})
+MATCH (a)-[:HIJO_DE*]->(ca:Taxon {rango: 'CLASS'})
+MATCH (b)-[:HIJO_DE*]->(cb:Taxon {rango: 'CLASS'})
 RETURN 'c base: todas las amenazadas fuera de AP' AS medida, count(*) AS pares,
        round(100.0 * sum(CASE WHEN ca <> cb THEN 1 ELSE 0 END) / count(*), 1) AS pct_distinta_clase;
 

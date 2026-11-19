@@ -12,7 +12,8 @@ ORDER BY celdas_urbanas DESC LIMIT 25;
 
 // 2) Pares introducida–nativa más frecuentes (más celdas urbanas compartidas)
 MATCH (i:Taxon)-[co:COOCURRE]->(n:Taxon)
-MATCH (i)-[:HIJO_DE*]->(ci:Taxon {rango: 'CLASS'}), (n)-[:HIJO_DE*]->(cn:Taxon {rango: 'CLASS'})
+MATCH (i)-[:HIJO_DE*]->(ci:Taxon {rango: 'CLASS'})
+MATCH (n)-[:HIJO_DE*]->(cn:Taxon {rango: 'CLASS'})
 RETURN i.nombre AS introducida, ci.nombre AS clase_i, n.nombre AS nativa, cn.nombre AS clase_n,
        co.celdas AS celdas_compartidas, co.zonas AS zonas_urbanas
 ORDER BY co.celdas DESC LIMIT 25;

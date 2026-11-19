@@ -1,17 +1,17 @@
 medida, pares, pct_distinta_clase
-"a1 observado (por comunidad)", 16773, 90.1
+"a1 observado (por comunidad)", 18913, 82.0
 medida, pares, pct_distinta_clase
-"a2 observado (pares distintos)", 10888, 89.8
+"a2 observado (pares distintos)", 12126, 81.5
 medida, pares, pct_distinta_clase
-"b base: todos los pares, mismas especies", 13203, 91.0
+"b base: todos los pares, mismas especies", 14706, 83.9
 medida, pares, pct_distinta_clase
-"c base: todas las amenazadas fuera de AP", 25566, 91.9
+"c base: todas las amenazadas fuera de AP", 25200, 86.6
 clase, especies
 "Magnoliopsida", 51
-"Aves", 30
-"Amphibia", 25
+"Aves", 32
+"Amphibia", 24
 "Reptilia", 21
-"Mammalia", 12
-"Pinopsida", 7
+"Mammalia", 11
+"Pinopsida", 6
 "Agaricomycetes", 6
-"Elasmobranchii", 5
+"Teleostei", 6

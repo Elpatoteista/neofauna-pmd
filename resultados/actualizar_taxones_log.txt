@@ -1,0 +1,25 @@
+[2026-11-18 23:31:56] (+1 s) Capas (taxones + GRIIS + Natural Earth + WDPA)
+== Cruce GRIIS <-> taxones COL por nombre canónico ==
+ registros_pais_especie | especies_distintas | con_specieskey | pct_match | marcadas_invasoras 
+------------------------+--------------------+----------------+-----------+--------------------
+                  22494 |              11602 |          16891 |      75.1 |               3169
+[2026-11-18 23:35:34] (+219 s) Q2 Chile
+[2026-11-18 23:35:39] (+224 s) Q2 América
+[2026-11-18 23:47:37] (+942 s) Q1 América
+[2026-11-18 23:49:06] (+1031 s) Neo4j Chile 2015–2026
+[2026-11-18 23:52:17] (+1222 s) Línea base de comunidades
+[2026-11-18 23:52:21] (+1226 s) Mapas Q1/Q2
+listo: q1a
+listo: q1b
+listo: q2a
+listo: q2b
+[2026-11-18 23:54:48] (+1373 s) Métricas después
+            t             |  count  
+--------------------------+---------
+ taxones                  |  226003
+ griis con clave          |   16891
+ obs amenazadas           | 1054764
+ obs urbanas introducidas | 4511007
+(4 rows)
+
+[2026-11-18 23:54:50] (+1375 s) FIN

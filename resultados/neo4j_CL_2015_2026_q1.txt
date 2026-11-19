@@ -1,4 +1,5 @@
 especie, iucn, clase, familia, obs, obs_fuera_ap, pct_fuera
+"Porlieria chilensis", "VU", "Magnoliopsida", "Zygophyllaceae", 1359, 1257, 92.5
 "Bombus dahlbomii", "EN", "Insecta", "Apidae", 1045, 721, 69.0
 "Vultur gryphus", "VU", "Aves", "Cathartidae", 1319, 614, 46.6
 "Citronella mucronata", "VU", "Magnoliopsida", "Cardiopteridaceae", 739, 595, 80.5
@@ -19,51 +20,49 @@ especie, iucn, clase, familia, obs, obs_fuera_ap, pct_fuera
 "Eriosyce chilensis", "CR", "Magnoliopsida", "Cactaceae", 204, 204, 100.0
 "Pilgerodendron uviferum", "VU", "Pinopsida", "Cupressaceae", 323, 203, 62.8
 "Copiapoa gigantea", "VU", "Magnoliopsida", "Cactaceae", 197, 197, 100.0
+"Athyonidium chilensis", "CR", "Holothuroidea", "Cucumariidae", 190, 186, 97.9
+"Crinodendron patagua", "VU", "Magnoliopsida", "Elaeocarpaceae", 223, 179, 80.3
 "Pterodroma defilippiana", "VU", "Aves", "Procellariidae", 179, 162, 90.5
 "Pitavia punctata", "EN", "Magnoliopsida", "Rutaceae", 162, 159, 98.1
 "Diomedea sanfordi", "EN", "Aves", "Diomedeidae", 164, 159, 97.0
 "Butyriboletus loyo", "EN", "Agaricomycetes", "Boletaceae", 167, 156, 93.4
-"Genista monspessulana", "EN", "Magnoliopsida", "Fabaceae", 207, 152, 73.4
 "Copiapoa fiedleriana", "VU", "Magnoliopsida", "Cactaceae", 181, 151, 83.4
 "Copiapoa humilis", "EN", "Magnoliopsida", "Cactaceae", 151, 140, 92.7
-"Rhinella spinulosa", "EN", "Amphibia", "Bufonidae", 221, 119, 53.8
-"Hippocamelus bisulcus", "EN", "Mammalia", "Cervidae", 259, 111, 42.9
-"Balaenoptera physalus", "VU", "Mammalia", "Balaenopteridae", 171, 110, 64.3
+"Gomortega keule", "EN", "Magnoliopsida", "Gomortegaceae", 119, 119, 100.0
 orden, familia, especies_amenazadas, ejemplos
 "Caryophyllales", "Cactaceae", 33, ["Eriosyce confinis (VU)", "Eriosyce napina (VU)", "Eriosyce odieri (VU)", "Eriosyce rodentiophila (VU)", "Eriosyce taltalensis (VU)", "Copiapoa echinoides (VU)"]
-"Squamata", "Liolaemidae", 20, ["Liolaemus carlosgarini (VU)", "Liolaemus frassinettii (VU)", "Liolaemus hellmichi (VU)", "Liolaemus thermarum (VU)", "Phymaturus vociferator (VU)", "Liolaemus villaricensis (VU)"]
+"Squamata", "Liolaemidae", 20, ["Liolaemus audituvelatus (VU)", "Liolaemus carlosgarini (VU)", "Liolaemus frassinettii (VU)", "Liolaemus hellmichi (VU)", "Liolaemus thermarum (VU)", "Phymaturus vociferator (VU)"]
 "Anura", "Alsodidae", 16, ["Alsodes hugoi (VU)", "Alsodes montanus (VU)", "Alsodes tumultuosus (VU)", "Eupsophus altor (EN)", "Eupsophus contulmoensis (EN)", "Eupsophus migueli (EN)"]
-"Procellariiformes", "Diomedeidae", 8, ["Diomedea epomophora (VU)", "Diomedea exulans (VU)", "Thalassarche eremita (VU)", "Thalassarche salvini (VU)", "Diomedea antipodensis (EN)", "Diomedea sanfordi (EN)"]
 "Procellariiformes", "Procellariidae", 8, ["Procellaria aequinoctialis (VU)", "Pterodroma defilippiana (VU)", "Pterodroma externa (VU)", "Pterodroma longirostris (VU)", "Ardenna bulleri (VU)", "Ardenna creatopus (VU)"]
-"Anura", "Telmatobiidae", 4, ["Telmatobius pefauri (EN)", "Telmatobius chusmisensis (EN)", "Telmatobius philippii (CR)", "Telmatobius fronteriensis (CR)"]
-"Asterales", "Asteraceae", 4, ["Parastrephia teretiuscula (VU)", "Rockhausenia glaberrima (VU)", "Diplostephium cinereum (EN)", "Pseudognaphalium cheiranthifolium (EN)"]
+"Procellariiformes", "Diomedeidae", 8, ["Diomedea epomophora (VU)", "Diomedea exulans (VU)", "Thalassarche eremita (VU)", "Thalassarche salvini (VU)", "Diomedea antipodensis (EN)", "Diomedea sanfordi (EN)"]
+"Charadriiformes", "Scolopacidae", 5, ["Tringa flavipes (VU)", "Limnodromus griseus (VU)", "Limosa haemastica (VU)", "Limosa fedoa (VU)", "Calidris fuscicollis (VU)"]
 "Squamata", "Leiosauridae", 4, ["Pristidactylus torquatus (VU)", "Pristidactylus alvaroi (EN)", "Pristidactylus valeriae (EN)", "Pristidactylus volcanensis (EN)"]
-"Cupressales", "Cupressaceae", 4, ["Hesperocyparis macrocarpa (VU)", "Pilgerodendron uviferum (VU)", "Sequoia sempervirens (EN)", "Fitzroya cupressoides (EN)"]
-"Charadriiformes", "Scolopacidae", 4, ["Tringa flavipes (VU)", "Limosa haemastica (VU)", "Limosa fedoa (VU)", "Calidris fuscicollis (VU)"]
-"Anura", "Bufonidae", 3, ["Rhinella rubropunctata (VU)", "Rhinella atacamensis (VU)", "Rhinella spinulosa (EN)"]
+"Sphenisciformes", "Spheniscidae", 4, ["Eudyptes chrysocome (VU)", "Spheniscus humboldti (VU)", "Eudyptes robustus (VU)", "Eudyptes chrysolophus (VU)"]
+"Anura", "Telmatobiidae", 4, ["Telmatobius chusmisensis (EN)", "Telmatobius pefauri (CR)", "Telmatobius philippii (CR)", "Telmatobius fronteriensis (CR)"]
+"Myrtales", "Myrtaceae", 4, ["Eucalyptus leucoxylon (VU)", "Legrandia concinna (EN)", "Myrceugenia correifolia (EN)", "Myrcianthes coquimbensis (EN)"]
 "Solanales", "Solanaceae", 3, ["Fabiana squamata (EN)", "Solanum lycopersicoides (EN)", "Solanum sitiens (EN)"]
 "Carcharhiniformes", "Triakidae", 3, ["Galeorhinus galeus (CR)", "Mustelus mento (CR)", "Triakis maculata (CR)"]
-"Sphenisciformes", "Spheniscidae", 3, ["Eudyptes chrysocome (VU)", "Spheniscus humboldti (VU)", "Eudyptes robustus (VU)"]
+"Cupressales", "Cupressaceae", 3, ["Pilgerodendron uviferum (VU)", "Sequoia sempervirens (EN)", "Fitzroya cupressoides (EN)"]
 "Cetacea", "Balaenopteridae", 3, ["Balaenoptera physalus (VU)", "Balaenoptera borealis (EN)", "Balaenoptera musculus (EN)"]
-"Myrtales", "Myrtaceae", 3, ["Eucalyptus leucoxylon (VU)", "Legrandia concinna (EN)", "Myrcianthes coquimbensis (EN)"]
-"Laurales", "Lauraceae", 3, ["Persea americana (VU)", "Beilschmiedia miersii (VU)", "Beilschmiedia berteroana (EN)"]
 "Anura", "Calyptocephalellidae", 3, ["Calyptocephalella gayi (VU)", "Telmatobufo bullocki (EN)", "Telmatobufo venustus (EN)"]
-"Malvales", "Malvaceae", 3, ["Nototriche turritella (VU)", "Hibiscus arnottianus (EN)", "Hibiscus rosa-sinensis (CR)"]
+"Characiformes", "Characidae", 2, ["Cheirodon australe (VU)", "Cheirodon pisciculus (EN)"]
 "Atheriniformes", "Atherinopsidae", 2, ["Basilichthys microlepidotus (VU)", "Odontesthes mauleanum (VU)"]
+"Lamniformes", "Alopiidae", 2, ["Alopias superciliosus (VU)", "Alopias vulpinus (VU)"]
+"Testudines", "Cheloniidae", 2, ["Lepidochelys olivacea (VU)", "Caretta caretta (VU)"]
+"Asterales", "Asteraceae", 2, ["Parastrephia teretiuscula (VU)", "Diplostephium cinereum (EN)"]
 comunidad, observadores, obs, especies_amenazadas, ejemplos
-51, 388, 5802, 197, ["Dermochelys coriacea", "Diomedea epomophora", "Eriosyce confinis", "Eriosyce napina", "Eriosyce odieri"]
-971, 412, 3101, 142, ["Diomedea epomophora", "Diomedea exulans", "Eriosyce napina", "Eriosyce odieri", "Eriosyce rodentiophila"]
-4237, 156, 520, 84, ["Gymnopanella nothofagi", "Hippocamelus antisensis", "Liolaemus carlosgarini", "Liolaemus frassinettii", "Liolaemus thermarum"]
-3957, 81, 201, 59, ["Diomedea epomophora", "Genypterus blacodes", "Hippocamelus antisensis", "Lamna nasus", "Notorynchus cepedianus"]
-3420, 121, 165, 58, ["Diomedea epomophora", "Eriosyce odieri", "Hesperocyparis macrocarpa", "Liolaemus carlosgarini", "Mordacia lapicida"]
-5669, 140, 513, 51, ["Eriosyce napina", "Eriosyce odieri", "Eriosyce taltalensis", "Eucalyptus leucoxylon", "Hesperocyparis macrocarpa"]
-4719, 180, 428, 48, ["Diomedea epomophora", "Diomedea exulans", "Eudyptes chrysocome", "Gymnopanella nothofagi", "Hesperocyparis macrocarpa"]
-2524, 164, 380, 46, ["Eriosyce napina", "Persea americana", "Phoenicoparrus andinus", "Pilgerodendron uviferum", "Podocarpus salignus"]
-2666, 77, 245, 45, ["Diomedea epomophora", "Diomedea exulans", "Eriosyce napina", "Eriosyce odieri", "Eriosyce rodentiophila"]
-4328, 85, 166, 41, ["Diomedea epomophora", "Diomedea exulans", "Eudyptes chrysocome", "Hesperocyparis macrocarpa", "Phoenicoparrus andinus"]
-5093, 47, 53, 25, ["Hesperocyparis macrocarpa", "Podocarpus salignus", "Pseudocaranx chilensis", "Tringa flavipes", "Vultur gryphus"]
-3573, 39, 60, 24, ["Genypterus blacodes", "Hesperocyparis macrocarpa", "Lamna nasus", "Phoenicoparrus andinus", "Pilgerodendron uviferum"]
-3797, 48, 58, 20, ["Diomedea epomophora", "Phoenicoparrus andinus", "Spheniscus humboldti", "Thalassarche salvini", "Tringa flavipes"]
+51, 507, 7395, 194, ["Dermochelys coriacea", "Diomedea epomophora", "Eriosyce confinis", "Eriosyce napina", "Eriosyce odieri"]
+17, 455, 2589, 138, ["Diomedea epomophora", "Eriosyce napina", "Eriosyce odieri", "Eriosyce rodentiophila", "Eriosyce taltalensis"]
+4086, 149, 500, 84, ["Gymnopanella nothofagi", "Hippocamelus antisensis", "Liolaemus audituvelatus", "Liolaemus carlosgarini", "Liolaemus frassinettii"]
+3645, 268, 1216, 68, ["Diomedea epomophora", "Diomedea exulans", "Eudyptes chrysocome", "Gymnopanella nothofagi", "Lamna nasus"]
+2556, 118, 322, 63, ["Diomedea epomophora", "Diomedea exulans", "Eriosyce napina", "Eriosyce odieri", "Eriosyce rodentiophila"]
+4812, 109, 142, 47, ["Diomedea epomophora", "Liolaemus carlosgarini", "Mordacia lapicida", "Notorynchus cepedianus", "Phoenicoparrus andinus"]
+1722, 169, 377, 42, ["Eriosyce odieri", "Mirounga leonina", "Phoenicoparrus andinus", "Pilgerodendron uviferum", "Podocarpus salignus"]
+5640, 144, 188, 37, ["Hippocamelus antisensis", "Phoenicoparrus andinus", "Podocarpus salignus", "Porlieria chilensis", "Prumnopitys andina"]
+3776, 44, 105, 36, ["Diomedea epomophora", "Genypterus blacodes", "Lamna nasus", "Mirounga leonina", "Notorynchus cepedianus"]
+3065, 112, 157, 26, ["Genypterus blacodes", "Lamna nasus", "Mirounga leonina", "Phoenicoparrus andinus", "Pilgerodendron uviferum"]
+5024, 51, 59, 26, ["Podocarpus salignus", "Porlieria chilensis", "Pseudocaranx chilensis", "Tringa flavipes", "Vultur gryphus"]
+3327, 18, 23, 9, ["Hippocamelus antisensis", "Mirounga leonina", "Pilgerodendron uviferum", "Porlieria chilensis", "Vultur gryphus"]
 relacion, pares, comunidades, ejemplos
-"distinta clase", 15106, 13, ["Dermochelys coriacea — Diomedea epomophora", "Dermochelys coriacea — Eriosyce confinis", "Dermochelys coriacea — Eriosyce napina", "Dermochelys coriacea — Eriosyce odieri"]
-"misma clase", 1667, 12, ["Dermochelys coriacea — Liolaemus carlosgarini", "Dermochelys coriacea — Liolaemus frassinettii", "Dermochelys coriacea — Liolaemus hellmichi", "Dermochelys coriacea — Pristidactylus torquatus"]
+"distinta clase", 15511, 12, ["Dermochelys coriacea — Diomedea epomophora", "Dermochelys coriacea — Eriosyce confinis", "Dermochelys coriacea — Eriosyce napina", "Dermochelys coriacea — Eriosyce odieri"]
+"misma clase", 3402, 11, ["Dermochelys coriacea — Lepidochelys olivacea", "Dermochelys coriacea — Liolaemus audituvelatus", "Dermochelys coriacea — Liolaemus carlosgarini", "Dermochelys coriacea — Liolaemus frassinettii"]

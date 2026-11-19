@@ -42,7 +42,9 @@ Windows), Python 3 con matplotlib y networkx (`pip install matplotlib networkx`)
    * Chile 2015–2026: descarga `0014759-261110092616502` → CSV de 345 MB, 537.785 filas.
    * América (Norte + Sur, todos los años): descarga `0014768-261110092616502` → ZIP de 14,9 GB (CSV de 59,7 GB,
      96.740.492 filas). **Se carga directamente desde el ZIP**; no hace falta descomprimirlo.
-   * Tabla de taxones de GBIF (`Datos GBIF - taxones y ocurrencias.csv`, 498.455 taxones, jerarquía + IUCN).
+   * Lista de especies de GBIF con la misma consulta de América (descarga `0000783-261118162104854`,
+     DOI 10.15468/dl.k54msh, 219.104 taxones, Catalogue of Life 2026-10-16 XR): tabla de taxones (jerarquía + IUCN).
+     `.env` → `CSV_TAXONES`. Para recargarla y rehacer las preguntas 1 y 2: `./actualizar_taxones.sh "<archivo>"`.
    Se bajan desde `https://api.gbif.org/v1/occurrence/download/request/<ID>.zip`.
 2. **Capas complementarias**
    * GRIIS (América): `python scripts/bajar_griis.py` → `datos/capas/griis/griis_america.tsv`.
@@ -79,6 +81,7 @@ Las descargas de GBIF exigen citar su DOI en cualquier publicación:
 * GBIF.org (18 November 2026) GBIF Occurrence Download <https://doi.org/10.15468/dl.5gu3zk> (Chile 2015–2026, `0014759-261110092616502`).
 * iNaturalist contributors, iNaturalist (2026). iNaturalist Research-grade Observations. iNaturalist.org. Occurrence dataset <https://doi.org/10.15468/ab3s5x> accessed via GBIF.org on 2026-11-18. Licencia CC BY-NC 4.0.
 * Bánki, O., Roskov, Y., Döring, M., Ower, G., et al. (2026). Catalogue of Life (2026-10-16 XR). <https://doi.org/10.48580/dgzlf>. CC BY 4.0.
+* GBIF.org (19 November 2026) GBIF Occurrence Download <https://doi.org/10.15468/dl.k54msh> (lista de especies = tabla de taxones, `0000783-261118162104854`).
 * UNEP-WCMC and IUCN (2026), Protected Planet: The World Database on Protected and Conserved Areas (WDPCA) [On-line], November 2026, Cambridge, UK: UNEP-WCMC and IUCN. Available at: www.protectedplanet.net. Solo uso no comercial y sin redistribución: por eso la WDPA **no** está en este repositorio.
 * GRIIS (ISSG): las 44 citas, con su DOI, en `resultados/griis_citas.txt` (42 CC BY 4.0, 2 CC0 1.0).
 * Made with Natural Earth. Free vector and raster map data @ naturalearthdata.com (Urban Areas 1:10m, v4.1.0, dominio público).
@@ -99,7 +102,8 @@ Las descargas de GBIF exigen citar su DOI en cualquier publicación:
 * **Grilla de igual área**: Q3 y la coocurrencia usan celdas cuadradas en EPSG:6933 (EASE-Grid 2.0), así todas
   las celdas tienen la misma superficie a cualquier latitud.
 * **GRIIS**: 44 checklists de países/territorios de América; cruce con Catalogue of Life por nombre canónico
-  (género + epíteto) → 81 % de coincidencia. Se excluyen los checklists **subnacionales** (Juan Fernández, Alaska)
+  (género + epíteto, aceptado o sinónimo) → 75,1 % de los pares país–especie con clave (los que faltan son,
+  en su mayoría, especies sin observaciones en la descarga). Se excluyen los checklists **subnacionales** (Juan Fernández, Alaska)
   porque listan como introducidas especies nativas del resto del país (p.ej. el zorzal o el maqui en Chile).
   `establishmentMeans` de GBIF viene **vacío** en estas descargas, así que no sirve como complemento.
 * **Neo4j por etapas**: la coocurrencia se calcula **por celda** (taxón–celda–taxón) y no entre pares de
@@ -119,26 +123,28 @@ Neo4j: heap 2 GB, pagecache 1,5 GB.
 | Chile 2015–2026 | 537.785 | 2,7 s | 2,1 s | 6 s | 162 MB | 40 MB |
 | América (todos los años) | 96.740.492 | 12 min 2 s | 7 min 6 s (PK 1:14, GiST 2:53, specieskey 1:13, year 0:32, VACUUM 1:14) | 19 min 10 s | 27 GB | 7,2 GB |
 
-Capas (`cargar_capas.sh`, 3 min 55 s): taxones 498.455 filas; GRIIS 23.678 → 22.494 pares país–especie; Natural
+Capas (`cargar_capas.sh`, 3 min 38 s con la tabla nueva): taxones 219.104 filas + 6.899 derivadas; GRIIS 23.678 → 22.494 pares país–especie; Natural
 Earth 11.878 polígonos (2.137 en América); **WDPA** 80.170 polígonos en la caja de América (de 500.347 globales;
 lectura 1 min 51 s; 552 "Proposed" excluidas) subdivididos con `ST_Subdivide(256)` en 890.248 trozos + GiST
 (1 min 53 s). Todo EPSG:4326, 0 geometrías inválidas.
 
 ### Pregunta 1 — amenazadas fuera de áreas protegidas (`resultados/q1_postgis_america.txt`, `neo4j_CL_2015_2026_q1.txt`)
 
-* PostGIS, América completa (**1 min 35 s**: filtrar amenazadas 15 s + punto-en-polígono 63 s): 1.193.504
-  observaciones de especies VU/EN/CR. Se excluyen 73.811 obs. de 66 especies que GRIIS lista como **introducidas**
-  en ese país (p.ej. *Hibiscus rosa-sinensis*, conejo europeo): amenazadas en su área nativa pero no aquí.
-* Resultado: 1.119.693 obs. de 6.092 especies; **71,5 % fuera de áreas protegidas** (CR 69,0 %, EN 66,2 %,
-  VU 73,5 %); 5.250 especies tienen al menos una observación fuera. Más observadas fuera: *Terrapene carolina*,
-  *Bombus pensylvanicus*, *Pluvialis squatarola*, *Gopherus polyphemus*; CR: *Castanea dentata*, fresnos
-  *Fraxinus*, *Bombus affinis*, cóndor de California, carey, corales *Acropora*.
-* Neo4j (Chile 2015–2026, 389.141 obs. fuera de AP): *Bombus dahlbomii* (EN), cóndor, *Citronella mucronata*,
-  palma chilena, chungungo. Taxonómicamente se concentran en Cactaceae (33 especies), Liolaemidae (20),
-  Alsodidae (16) y Procellariiformes. Louvain: 15 comunidades de observadores (modularidad 0,69); las 2 mayores
-  registran 197 y 142 especies amenazadas fuera de AP. El 90,1 % de los pares de especies amenazadas unidos por
-  una misma comunidad son de clases distintas, pero **no es distintivo**: la línea base (todos los pares posibles
-  de las mismas 163 especies) da 91,0 %, y todas las amenazadas fuera de AP 91,9 %
+* PostGIS, América completa (**1 min 29 s**: filtrar amenazadas 16 s + punto-en-polígono 66 s): 1.054.764
+  observaciones de especies VU/EN/CR (categorías IUCN asignadas por GBIF en noviembre de 2026). Se excluyen 28.414 obs.
+  de 52 especies que GRIIS lista como **introducidas** en ese país (p.ej. *Amazona viridigenalis* en EE.UU., conejo
+  europeo): amenazadas en su área nativa pero no aquí.
+* Resultado: 1.026.350 obs. de 5.968 especies; **71,0 % fuera de áreas protegidas** (CR 72,5 %, EN 66,0 %,
+  VU 72,5 %); 5.102 especies tienen al menos una observación fuera; con solo observaciones de error ≤ 1 km, 68,3 %.
+  Más observadas fuera: *Terrapene carolina*, *Bombus pensylvanicus*, *Pluvialis squatarola*, *Tringa flavipes*;
+  CR: *Gopherus polyphemus* (VU en la asignación de agosto), *Castanea dentata*, fresnos *Fraxinus*,
+  *Bombus affinis*, cóndor de California, *Pycnopodia helianthoides*.
+* Neo4j (Chile 2015–2026, 389.141 obs. fuera de AP): *Porlieria chilensis* (VU), *Bombus dahlbomii* (EN), cóndor,
+  *Citronella mucronata*, palma chilena, chungungo. Taxonómicamente se concentran en Cactaceae (33 especies), Liolaemidae (20),
+  Alsodidae (16) y Procellariiformes. Louvain: 13 comunidades de observadores (modularidad 0,697); las 2 con más
+  amenazadas registran 194 y 138 especies fuera de AP. El 81,5 % de los 12.126 pares distintos de especies
+  amenazadas unidos por una misma comunidad son de clases distintas, pero **no es distintivo**: la línea base (todos
+  los pares posibles de las mismas 172 especies, 14.706) da 83,9 %, y todas las amenazadas fuera de AP 86,6 %
   (`cypher/q1_linea_base.cypher` → `resultados/neo4j_CL_2015_2026_q1_linea_base.txt`). El porcentaje refleja la
   mezcla de clases, no que las comunidades crucen el árbol taxonómico más que el azar.
 * Alcance: la parte PostGIS de las preguntas 1 y 2 es continental; la parte de grafo es de Chile (Argentina y
@@ -159,7 +165,8 @@ lectura 1 min 51 s; 552 "Proposed" excluidas) subdivididos con `ST_Subdivide(256
 ### Pregunta 2 — parte PostGIS (`resultados/q2_postgis_*.txt`)
 
 * América: intersección de 96,7 M de puntos con polígonos urbanos **7 min 38 s** → 27,06 M observaciones urbanas en
-  2.079 zonas, 84.140 especies; 4.490 introducidas según GRIIS (16,2 % de las observaciones urbanas).
+  2.079 zonas, 84.140 especies; 4.789 introducidas según GRIIS, 763 marcadas *invasive* (16,7 % de las
+  observaciones urbanas). GRIIS se agrupa por (país, especie) antes del join para no duplicar observaciones.
 * Más observadas: *Apis mellifera*, *Passer domesticus*, *Harmonia axyridis*, *Columba livia*, *Sturnus vulgaris*.
   Desglose por país en `q2_postgis_america_por_pais.txt` (Chile: *Bombus terrestris*; Argentina y Canadá:
   *Harmonia axyridis*; México: *Passer domesticus*).
@@ -180,7 +187,7 @@ El costo crece de forma aproximadamente lineal con las observaciones; la coocurr
 
 * `./reproducir.sh` desde volúmenes vacíos (18-11-2026): **47 min 53 s**, sin errores. Resultados idénticos a la
   primera corrida en todo lo determinista. Las comunidades de Louvain variaban entre corridas (ejecución paralela),
-  por eso GDS corre con `concurrency: 1` (verificado: dos corridas iguales; 15 comunidades, modularidad 0,694).
+  por eso GDS corre con `concurrency: 1` (verificado: dos corridas iguales; con la tabla de taxones nueva, 13 comunidades, modularidad 0,697).
 * `sql/experimentos.sql` → `resultados/experimentos.txt`:
 
 | Experimento | Resultado |
@@ -214,7 +221,16 @@ mucho más extensos (EE.UU. 8.527 especies, Canadá 1.581, la mayoría de Sudam�
 * GRIIS tiene vacíos: p.ej. *Apis mellifera* no está en el checklist de Chile (sí en otros 17 de América), por eso en
   Chile aparece como "nativa" en la coocurrencia. Ecuador y Puerto Rico no tienen checklist GRIIS en GBIF.
   El GRIIS de EE.UU. (v2.0, 2022) no informa `isInvasive`.
-* ~6 % de las `specieskey` observadas no están en la tabla de taxones: entran al grafo sin jerarquía ni IUCN.
+* La lista de especies de GBIF trae una fila por nombre usado: 6.899 especies aceptadas (2,57 M obs.) solo aparecen
+  bajo un sinónimo o subespecie. Se agregan como filas derivadas (100 % de cobertura), pero sin categoría IUCN.
+  La primera versión usaba una lista global de agosto y unía por `taxonKey`: 7,1 % de especies sin match.
+* Las categorías IUCN cambian entre versiones de GBIF (agosto → noviembre: 155 especies VU → NE; *Gopherus
+  polyphemus* VU → CR; *Porlieria chilensis* sin categoría → VU).
+* GRIIS de BR, CL, CR, DO, GT y PA escribe la rana toro "*Rana catesbeiana*", nombre que la lista no trae: ahí no
+  cuenta como introducida (sí donde se escribe "*Lithobates catesbeianus*"). De sus 30.132 obs. urbanas, 29.992
+  están en EE.UU. y Canadá, donde es nativa.
+* Un `MATCH` con dos patrones de linaje descartaba pares con aristas `HIJO_DE` compartidas (Neo4j no reutiliza una
+  relación en un patrón); se separó en dos `MATCH`. La línea base pasó de ~90 % a 82 % y ahora cuadra (14.706 pares).
 * La categoría IUCN es global: especies cultivadas que GRIIS no lista en un país (p.ej. *Persea americana*,
   *Citrus aurantium*, *Oxalis corniculata* en algunos países) siguen apareciendo como "amenazadas".
 * "Fuera de área protegida" = no intersecta ningún polígono WDPA vigente; los sitios WDPA publicados solo como

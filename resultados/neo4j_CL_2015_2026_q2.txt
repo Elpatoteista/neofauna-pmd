@@ -1,76 +1,75 @@
 introducida, invasora, celdas_urbanas, obs_urbanas, nativas_coocurrentes
-"Harmonia axyridis", FALSE, 160, 874, 3922
-"Bombus terrestris", TRUE, 153, 968, 4053
-"Passer domesticus", FALSE, 147, 511, 3889
-"Eschscholzia californica", TRUE, 123, 629, 3504
-"Cornu aspersum", TRUE, 121, 363, 3858
-"Molothrus bonariensis", TRUE, 114, 740, 3807
-"Columba livia", FALSE, 111, 795, 3739
-"Callipepla californica", FALSE, 102, 402, 3590
-"Verbascum virgatum", FALSE, 96, 214, 3521
-"Nicotiana glauca", TRUE, 91, 341, 2951
-"Cichorium intybus", TRUE, 87, 208, 3326
-"Acacia dealbata", TRUE, 83, 248, 3338
-"Trifolium repens", FALSE, 78, 171, 3415
-"Myiopsitta monachus", TRUE, 77, 675, 2813
-"Linepithema humile", FALSE, 77, 190, 3360
-"Conium maculatum", FALSE, 75, 185, 3398
-"Acacia melanoxylon", FALSE, 71, 185, 3432
-"Papaver somniferum", FALSE, 71, 179, 2850
-"Vespula germanica", TRUE, 71, 159, 3388
-"Silybum marianum", FALSE, 70, 145, 3315
-"Oxalis pes-caprae", TRUE, 68, 181, 3093
-"Convolvulus arvensis", FALSE, 68, 124, 3100
-"Plantago lanceolata", TRUE, 67, 112, 3073
-"Felis catus", TRUE, 66, 126, 3410
-"Galega officinalis", FALSE, 64, 173, 3206
+"Harmonia axyridis", FALSE, 160, 874, 3916
+"Bombus terrestris", TRUE, 153, 968, 4047
+"Passer domesticus", FALSE, 147, 511, 3883
+"Eschscholzia californica", TRUE, 123, 629, 3498
+"Cornu aspersum", TRUE, 121, 363, 3852
+"Molothrus bonariensis", TRUE, 114, 740, 3801
+"Columba livia", FALSE, 111, 795, 3733
+"Callipepla californica", FALSE, 102, 402, 3584
+"Verbascum virgatum", FALSE, 96, 214, 3515
+"Nicotiana glauca", TRUE, 91, 341, 2945
+"Cichorium intybus", TRUE, 87, 208, 3320
+"Acacia dealbata", TRUE, 83, 248, 3333
+"Trifolium repens", FALSE, 78, 171, 3409
+"Myiopsitta monachus", TRUE, 77, 675, 2807
+"Linepithema humile", FALSE, 77, 190, 3354
+"Conium maculatum", FALSE, 75, 185, 3393
+"Acacia melanoxylon", FALSE, 71, 185, 3426
+"Vespula germanica", TRUE, 71, 159, 3383
+"Papaver somniferum", FALSE, 71, 179, 2844
+"Silybum marianum", FALSE, 70, 145, 3309
+"Oxalis pes-caprae", TRUE, 68, 181, 3087
+"Convolvulus arvensis", FALSE, 68, 124, 3094
+"Plantago lanceolata", TRUE, 67, 112, 3067
+"Felis catus", TRUE, 66, 126, 3404
+"Galega officinalis", FALSE, 64, 173, 3201
 introducida, clase_i, nativa, clase_n, celdas_compartidas, zonas_urbanas
+"Bombus terrestris", "Insecta", "Milvago chimango", "Aves", 125, 29
+"Harmonia axyridis", "Insecta", "Milvago chimango", "Aves", 124, 29
 "Harmonia axyridis", "Insecta", "Vanessa carye", "Insecta", 119, 30
 "Bombus terrestris", "Insecta", "Vanessa carye", "Insecta", 117, 30
 "Harmonia axyridis", "Insecta", "Apis mellifera", "Insecta", 116, 29
 "Bombus terrestris", "Insecta", "Zonotrichia capensis", "Aves", 114, 29
 "Harmonia axyridis", "Insecta", "Vanellus chilensis", "Aves", 114, 30
 "Bombus terrestris", "Insecta", "Turdus falcklandii", "Aves", 113, 26
+"Bombus terrestris", "Insecta", "Apis mellifera", "Insecta", 112, 29
 "Bombus terrestris", "Insecta", "Vanellus chilensis", "Aves", 112, 28
 "Harmonia axyridis", "Insecta", "Turdus falcklandii", "Aves", 111, 28
 "Harmonia axyridis", "Insecta", "Zonotrichia capensis", "Aves", 111, 28
 "Harmonia axyridis", "Insecta", "Zenaida auriculata", "Aves", 110, 27
+"Passer domesticus", "Aves", "Milvago chimango", "Aves", 110, 27
+"Passer domesticus", "Aves", "Turdus falcklandii", "Aves", 110, 30
 "Passer domesticus", "Aves", "Vanessa carye", "Insecta", 109, 32
 "Passer domesticus", "Aves", "Vanellus chilensis", "Aves", 109, 28
+"Harmonia axyridis", "Insecta", "Eriopis chilensis", "Insecta", 108, 30
 "Harmonia axyridis", "Insecta", "Liolaemus tenuis", "Reptilia", 108, 29
+"Passer domesticus", "Aves", "Zonotrichia capensis", "Aves", 107, 31
 "Passer domesticus", "Aves", "Zenaida auriculata", "Aves", 105, 32
 "Bombus terrestris", "Insecta", "Zenaida auriculata", "Aves", 104, 24
 "Bombus terrestris", "Insecta", "Mimus thenca", "Aves", 103, 27
 "Bombus terrestris", "Insecta", "Leistes loyca", "Aves", 103, 24
 "Harmonia axyridis", "Insecta", "Mimus thenca", "Aves", 102, 27
-"Bombus terrestris", "Insecta", "Sephanoides sephaniodes", "Aves", 101, 29
-"Molothrus bonariensis", "Aves", "Vanessa carye", "Insecta", 100, 21
-"Harmonia axyridis", "Insecta", "Sephanoides sephaniodes", "Aves", 100, 27
-"Harmonia axyridis", "Insecta", "Leistes loyca", "Aves", 100, 24
-"Passer domesticus", "Aves", "Apis mellifera", "Insecta", 98, 31
-"Cornu aspersum", "Gastropoda", "Vanessa carye", "Insecta", 97, 29
-"Bombus terrestris", "Insecta", "Eriopis chilensis", "Insecta", 97, 26
 nativa, iucn, invasoras_con_las_que_coocurre, celdas_compartidas, invasoras
-"Apis mellifera", NULL, 115, 1946, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Turdus falcklandii", "LC", 115, 1935, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Sephanoides sephaniodes", "LC", 114, 1773, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Vanellus chilensis", "LC", 113, 1949, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Zonotrichia capensis", "LC", 112, 1951, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Troglodytes aedon", "LC", 112, 1693, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Geranoaetus polyosoma", "LC", 112, 1346, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Milvago chimango", NULL, 111, 2098, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Zenaida auriculata", "LC", 111, 1852, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Eriopis chilensis", NULL, 111, 1849, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Leistes loyca", "LC", 111, 1796, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Liolaemus tenuis", "LC", 111, 1775, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Oncorhynchus mykiss"]
-"Eristalis tenax", NULL, 111, 1653, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Pyrope pyrope", "LC", 111, 1646, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Curaeus curaeus", "LC", 111, 1605, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Leptasthenura aegithaloides", "LC", 111, 1405, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Vanessa carye", NULL, 110, 1996, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Anairetes parulus", "LC", 110, 1556, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Tachycineta leucopyga", "LC", 110, 1377, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
-"Mimus thenca", "LC", 109, 1815, ["Anthemis cotula", "Carduus nutans", "Cirsium vulgare", "Carassius auratus", "Physalis viscosa"]
+"Apis mellifera", "NE", 117, 1984, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Turdus falcklandii", "LC", 117, 1974, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Sephanoides sephaniodes", "LC", 116, 1806, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Vanellus chilensis", "LC", 115, 1985, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Zonotrichia capensis", "LC", 114, 1989, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Troglodytes aedon", "LC", 114, 1727, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Geranoaetus polyosoma", "LC", 114, 1373, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Milvago chimango", NULL, 113, 2140, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Zenaida auriculata", "LC", 113, 1887, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Eriopis chilensis", "NE", 113, 1884, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Physalis viscosa"]
+"Leistes loyca", "LC", 113, 1834, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Liolaemus tenuis", "LC", 113, 1807, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Eristalis tenax", "NE", 113, 1687, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Physalis viscosa"]
+"Pyrope pyrope", "NE", 113, 1680, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Curaeus curaeus", "LC", 113, 1638, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Leptasthenura aegithaloides", "LC", 113, 1433, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Vanessa carye", "NE", 112, 2036, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Physalis viscosa"]
+"Anairetes parulus", "LC", 112, 1586, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Tachycineta leucopyga", "NE", 112, 1406, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
+"Mimus thenca", "LC", 111, 1851, ["Alternanthera philoxeroides", "Lupinus arboreus", "Leucanthemum vulgare", "Xenopus laevis", "Phalaris minor"]
 aristas_coocurrencia, celdas_promedio, celdas_max
-491777, 3.2403142074557745, 125
-[2026-11-18 17:56:50]    -> 4 s
+501380, 3.2330886752562438, 125
